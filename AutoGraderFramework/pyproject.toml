@@ -1,0 +1,19 @@
+[project]
+name = "autograder"
+version = "0.1.0"
+description = "A modular autograder framework for running and evaluating test scripts"
+authors = [
+    {name = "Shubham Nigam",email = "nigamshubham14@gmail.com"}
+]
+packages = [{ include = "autograder" }]
+requires-python = ">=3.12"
+dependencies = [
+    "rich (>=14.0.0,<15.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "pandas (>=2.2.3,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
