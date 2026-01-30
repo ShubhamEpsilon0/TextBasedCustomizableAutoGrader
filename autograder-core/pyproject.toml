@@ -1,0 +1,24 @@
+[project]
+name = "autograder-core"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "ShubhamEpsilon0",email = "snigam10@asu.edu"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "pandas (>=3.0.0,<4.0.0)",
+    "rich (>=14.3.1,<15.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "autograder", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+autograde = "autograder.cli:main"
