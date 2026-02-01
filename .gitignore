@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 submissions/
 studentNames.txt
+*.xlsx
