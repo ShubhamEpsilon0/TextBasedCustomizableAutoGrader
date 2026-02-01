@@ -35,21 +35,21 @@ def parseConfig(configPath):
 
 
 def main():
-    # try:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--config", required=True)
-    args = parser.parse_args()
+    try:
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config", required=True)
+        args = parser.parse_args()
 
-    config = parseConfig(args.config)
+        config = parseConfig(args.config)
 
-    grader = AutoGrader(config)
-    
-    grader.grade()
+        grader = AutoGrader(config)
+        
+        grader.grade()
 
     # grader.finalize()
-    # except Exception as e:
-    #     print("Autograder encountered a fatal error:", e)
-    # finally:
-    #     input("Press Enter to Exit..")
+    except Exception as e:
+        print("Autograder encountered a fatal error:", e)
+    finally:
+        input("Press Enter to Exit..")
     
 

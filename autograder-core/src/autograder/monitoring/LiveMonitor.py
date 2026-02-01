@@ -28,13 +28,6 @@ class Monitor:
         self.builders[name].updateTable(data)
 
     def renderAllTables(self):
-        # layout = Layout()
-        # layout.split_column(
-        #     *[
-        #         Layout(Panel(builder.buildTable(), title=name))
-        #         for name, builder in self.builders.items()
-        #     ]
-        # )
         return Group(*[builder.buildTable() for name, builder in self.builders.items()])
 
     def start(self):
@@ -42,11 +35,11 @@ class Monitor:
             self.thread = Thread(target=self.autoLoop, daemon=True)
             self.thread.start()
         else:
-            self.live = Live(console=self.console, refresh_per_second=4, screen=True)
+            self.live = Live(console=self.console, refresh_per_second=4, transient=False)
             self.live.start()
 
     def autoLoop(self):
-        with Live(self.renderAllTables(), console=self.console, refresh_per_second=4, screen=True) as live:
+        with Live(self.renderAllTables(), console=self.console, refresh_per_second=4, transient=False) as live:
             while not self.stopEvent.is_set():
                 live.update(self.renderAllTables())
                 time.sleep(self.refreshInterval)

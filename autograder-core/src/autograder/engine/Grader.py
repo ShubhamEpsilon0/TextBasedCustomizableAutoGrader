@@ -1,9 +1,10 @@
 import os
 import tempfile
 
-from autograder.engine.SubmissionManager import SubmissionManager
+from autograder.submissionsManager.SubmissionManager import SubmissionManager
 from autograder.data.CurrentOperationState import CurrentOperationState
 from autograder.script_runner.ShellScriptTestRunner import ShellScriptTestRunner
+from autograder.script_runner.PythonTestRunner import PythonTestRunner
 from autograder.result_writer.ExcelResultWriter import ExcelResultWriter
 
 from autograder.data.GradingContext import GradingContext
@@ -29,17 +30,16 @@ class AutoGrader:
     GRADED_SUBMISSIONS = "Graded Submissions"
     BLACKLISTED_SUBMISSIONS = "Blacklisted Submissions"
 
-    def __init__(self, config):
+    def __init__(self, config: dict):
         self.blacklistedSubmissions = set()
         self.config = config
         self.resumeLogArea = "./logs/gradedLogs.json"
         self.logger = Logger("./logs/operationalLogs.log")
 
-        self.testRunner = ShellScriptTestRunner(
-            config["testConfig"]["buildScriptPath"],
-            config["testConfig"]["runScriptPath"],
-            config["fatalErrors"]
-        )
+        self.scriptRunners = {
+            "ShellScript": ShellScriptTestRunner(config.get("fatalErrors", []), config.get("placeholderRegex", {})),
+            "Python": PythonTestRunner(config.get("fatalErrors", []), config.get("placeholderRegex", {}))
+        }
 
         self.writer = ExcelResultWriter(config["resultsFilePath"])
         self.writer.InitializeWriter()
@@ -62,7 +62,7 @@ class AutoGrader:
         self.progressLogger.InitializeForLogging()
         self._load_progress()
 
-        # self.monitor.start()
+        self.monitor.start()
         self.submissionManager = SubmissionManager(config, self.logger)
 
         self.pipeline = [
@@ -71,8 +71,8 @@ class AutoGrader:
             LateSubmissionStep(),
             StructureValidationStep(),
             CopyDefaultFilesStep(),
-            # BuildStep(),
-            # RunTestsStep(),
+            BuildStep(),
+            RunTestsStep(),
             # CleanupStep("after_submission")
         ]
 

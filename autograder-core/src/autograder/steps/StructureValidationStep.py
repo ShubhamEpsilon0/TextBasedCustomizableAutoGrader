@@ -12,7 +12,5 @@ class StructureValidationStep(PipelineStep):
             try:
                 grader.submissionManager.safelyFixFolderStructure(ctx.workspace)
             except:
-                print("Validating for ", ctx.student_name)
-
                 ctx.fatal_error = "Invalid folder structure"
                 grader.gradingSummary.SkippedSubmissions += 1
