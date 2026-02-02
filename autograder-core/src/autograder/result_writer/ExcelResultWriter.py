@@ -39,7 +39,7 @@ class ExcelResultWriter(ResultWriter):
             passedSetDict[("Tests", result.TestName, "Passed")] = result.Passed
             passedSetDict[("Tests", result.TestName, "Output")] = result.Output
             passedSetDict[("Tests", result.TestName, "Error")] = result.Error
-            passedSetDict[("Tests", result.TestName, "Similarity Report")] = result.SimilarityReport
+            # passedSetDict[("Tests", result.TestName, "Similarity Report")] = result.SimilarityReport
 
         res = {
             ("Student Name","", "") : resultObject.StudentName,

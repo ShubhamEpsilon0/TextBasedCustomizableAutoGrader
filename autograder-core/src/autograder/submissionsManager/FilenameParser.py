@@ -70,7 +70,7 @@ class FilenameParser:
         else:
             self.logger.error(
                 self._logTemplate({
-                    f"Ambiguous match for file: {filename}. Matches: {matches}"
+                    "Error": f"Ambiguous match for file: {filename}. Matches: {matches}"
                 })
             )
             raise ValueError(f"Ambiguous match for file: {filename}. Matches: {matches}")

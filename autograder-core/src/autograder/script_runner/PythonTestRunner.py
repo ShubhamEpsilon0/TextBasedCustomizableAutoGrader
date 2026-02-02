@@ -1,5 +1,7 @@
 # autograder/script_runner/PythonTestRunner.py
 from autograder.script_runner.TestRunner import TestRunner
+from autograder.logging.Logger import Logger
+
 import subprocess
 from typing import Optional, Union, List
 import sys
@@ -11,9 +13,10 @@ class PythonTestRunner(TestRunner):
     Supports input from string, list, or file.
     Can run standalone scripts or poetry package commands.
     """
-    def __init__(self, buildScript: Optional[str], fatalErrors: List[str], placeholderRegex: Optional[dict] = None):
+    def __init__(self, logger: Logger, buildScript: Optional[str], fatalErrors: List[str], placeholderRegex: Optional[dict] = None):
         # buildScript is not relevant for Python
-        super().__init__(buildScript, fatalErrors, placeholderRegex)
+        super().__init__(logger, buildScript, fatalErrors, placeholderRegex)
+        self.component = "PythonTestRunner"
 
     def build(self, studentSubmissionPath: str, buildScriptOverride: Optional[str] = None):
         # Python generally doesn't require build
@@ -30,6 +33,11 @@ class PythonTestRunner(TestRunner):
     ) -> dict:
         script = runScriptPath
         if not script:
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "RunScript": "",
+                "Error": "No Python test script provided"
+            }))
             raise ValueError("No Python test script provided")
 
         # Handle input
@@ -68,6 +76,11 @@ class PythonTestRunner(TestRunner):
             return self.generateTestResults(output, error, expectedOutputFile)
 
         except subprocess.TimeoutExpired:
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "RunScript": script,
+                "Error": "TimeoutExpired"
+            }))
             return {
                 "passed": False,
                 "output": "",
@@ -76,6 +89,14 @@ class PythonTestRunner(TestRunner):
                 "similarity_report": []
             }
         except Exception as e:
+            # Fatal errors in exception
+            # Fatal errors detection
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "RunScript": script,
+                "Error": str(e)
+            }))
+            self.detectFatalErrors([str(e)])
             return {
                 "passed": False,
                 "output": "",
@@ -83,7 +104,7 @@ class PythonTestRunner(TestRunner):
                 "error": f"Unexpected error: {str(e)}",
                 "similarity_report": []
             }
-        
+
     def _resolve_python_interpreter(self, workingDir: str) -> str:
         """
         If .venv exists, use its python interpreter.

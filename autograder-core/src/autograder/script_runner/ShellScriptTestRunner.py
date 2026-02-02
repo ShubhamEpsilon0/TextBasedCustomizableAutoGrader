@@ -1,16 +1,20 @@
 from autograder.script_runner.TestRunner import TestRunner
+from autograder.logging.Logger import Logger
+
 import subprocess
 import os
 import json
 from typing import Optional, Union, List
+import inspect
 
 class ShellScriptTestRunner(TestRunner):
     """
     Executes build and run scripts for C assignments.
     Supports global project-level scripts and per-test overrides.
     """
-    def __init__(self, buildScript, fatalErrors: List[str], placeholderRegex: Optional[dict] = None):
-        super().__init__(buildScript, fatalErrors, placeholderRegex)
+    def __init__(self, logger: Logger, buildScript, fatalErrors: List[str], placeholderRegex: Optional[dict] = None):
+        super().__init__(logger, buildScript, fatalErrors, placeholderRegex)
+        self.component = "ShellScriptTestRunner"
 
     # ------------------------------------------------------------------
     # Build
@@ -42,6 +46,11 @@ class ShellScriptTestRunner(TestRunner):
             return result.returncode == 0, output, error
 
         except subprocess.SubprocessError as e:
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "BuildScript": script,
+                "Error": str(e)
+            }))
             return False, None, str(e)
 
     # ------------------------------------------------------------------
@@ -65,6 +74,11 @@ class ShellScriptTestRunner(TestRunner):
         """
         script = runScript
         if not script:
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "RunScript": "",
+                "Error": "No run script provided"
+            }))
             raise ValueError("No run script provided")
 
         # Prepare input arguments
@@ -94,6 +108,11 @@ class ShellScriptTestRunner(TestRunner):
             return self.generateTestResults(output, error, expectedOutputFile)
 
         except subprocess.TimeoutExpired:
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "RunScript": script,
+                "Error": "TimeoutExpired"
+            }))
             return {
                 "passed": False,
                 "output": "",
@@ -104,6 +123,11 @@ class ShellScriptTestRunner(TestRunner):
         except Exception as e:
             # Fatal errors in exception
             # Fatal errors detection
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "RunScript": script,
+                "Error": str(e)
+            }))
             self.detectFatalErrors([str(e)])
             return {
                 "passed": False,

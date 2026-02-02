@@ -4,8 +4,10 @@ from abc import ABC, abstractmethod
 from typing import Optional, Union, List, Dict
 import difflib
 import os
+import inspect
 
 from autograder.utils.ExpectedOutputMatcher import ExpectedOutputMatcher
+from autograder.logging.Logger import Logger
 
 class TestRunner(ABC):
     """
@@ -14,13 +16,23 @@ class TestRunner(ABC):
 
     def __init__(
         self,
+        logger: Logger,
         buildScript: Optional[str] = None,
         fatalErrors: Optional[List[str]] = None,
         placeholderRegex: Dict[str, str] | None = None
     ):
+        self.logger = logger
         self.buildScript = buildScript
         self.fatalErrors = fatalErrors or []
         self.placeholderRegex = placeholderRegex or {}
+        self.component = "TestRunner"
+
+    def _log_template(self, message: dict) -> dict:
+        return {
+            "Component": self.component,
+            "Operation": inspect.currentframe().f_back.f_code.co_name,
+            "Message": message
+        }
 
     # -----------------------------------------------------------
     # Lifecycle hooks
