@@ -87,7 +87,6 @@ class AutoGrader:
                     self._checkpoint()
                     self._refresh_monitor()
 
-            self.monitor.stop()
         except SystemExit as e:
             self.blacklistedSubmissions.add(self.currentGradingState.CurrentStudentFile)
             self._checkpoint()
@@ -105,6 +104,11 @@ class AutoGrader:
                 "Operation": "grade",
                 "Message": f"Grading halted due to fatal error: {str(e)}"
             })
+        finally:
+            self.monitor.stop()
+            print("Grading process completed.")
+            print(f'Blacklisted Submissions: {self.blacklistedSubmissions}')
+
 
     # ----------------------------
     # Private Functions
