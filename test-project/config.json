@@ -1,0 +1,110 @@
+{
+    "fatalErrors": [
+        "Failed to insert the kernel module.",
+        "ailed to remove the kernel module.",
+        "codec can't decode byte"
+    ],
+    "placeholderRegex":{
+    "STUDENT NAME": ".*"
+    },
+    "folderStructure": [
+    {
+        "fileName": "cse330-kernel-files-project1",
+        "fileType": 0,
+        "content": [
+            {
+                "fileName": "syscall_64.tbl",
+                "fileType": 1
+            },
+            {
+                "fileName": "syscalls.h",
+                "fileType": 1
+            },
+            {
+                "fileName": "unistd.h",
+                "fileType": 1
+            },
+            {
+                "fileName": "my_syscall",
+                "fileType": 0,
+                "content": [
+                    {
+                        "fileName": "my_syscall.c",
+                        "misnomers": ["my_syscall.*\\.c"],
+                        "fileType": 1
+                    }
+                ]
+            }
+        ]
+    }, {
+        "fileName": "kernel_module",
+        "fileType": 0,
+        "content": [
+            {
+                "fileName": "my_name.c",
+                "misnomers": ["my_name.*\\.c"],
+                "fileType": 1
+            }
+        ]
+    }, {
+        "fileName": "syscall_test",
+        "fileType": 0,
+        "content": [
+            {
+                "fileName": "syscall_in_userspace.c",
+                "fileType": 1,
+                "misnomers": ["syscall[_,-]in[_,-]userspace.*\\.c"]
+            }
+        ]
+    }, {
+        "fileName": "syscall-screenshot.png",
+        "fileType": 1,
+        "misnomers": [".*\\.png$", ".*\\.jpeg$", ".*\\.jpg$"]
+    }
+    ],
+    "defaultFilesToCopy": [
+        {
+            "sourcePath": "../test-project/defaultFiles/cse330-kernel-files-project1/Makefile",
+            "destinationPath": "cse330-kernel-files-project1/Makefile"
+        },
+        {
+            "sourcePath": "../test-project/defaultFiles/cse330-kernel-files-project1/my_syscall/Makefile",
+            "destinationPath": "cse330-kernel-files-project1/my_syscall/Makefile"
+        },
+        {
+            "sourcePath": "../test-project/defaultFiles/kernel_module/Makefile",
+            "destinationPath": "kernel_module/Makefile"
+        }
+    ],
+    "roosterPath": "../studentNames.txt",
+    "submissionsPath": "../test-project/submissions/",
+    "testFolderPath": "../test-project/tests/",
+    "testConfig": {
+        "buildScriptPath": "../test-project/tests/build.sh",
+        "buildTestRunnerType": "ShellScript",
+        "testCases": [
+             {
+                "testName": "test-case1",
+                "buildRequired": false,
+                "runScriptPath": "evaluateScreenshot.py",
+                "testRunnerType": "Python",
+                "inputLine": "",
+                "timeout": 30,
+                "expectedOutputFilePath": "expected_output.txt",
+                "maxTestScore": 50
+            },
+            {
+                "testName": "test-case2",
+                "buildRequired": true,
+                "runScriptPath": "run.sh",
+                "testRunnerType": "ShellScript",
+                "inputLine": "",
+                "timeout": 30,
+                "expectedOutputFilePath": "expected_output.txt",
+                "maxTestScore": 50
+            }
+        ]
+    },
+    "resultsFilePath": "../test-project/results.xlsx"
+}
+
