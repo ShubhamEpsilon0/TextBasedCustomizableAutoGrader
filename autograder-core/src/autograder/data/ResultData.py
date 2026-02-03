@@ -14,6 +14,8 @@ class ResultObject:
     StudentName: str = field(default_factory=str)
     AsuId: str = field(default_factory=str)
     FatalErrors: str = field(default_factory=str)
+    BuildPassed: bool = field(default_factory=bool)
+    BuildError: str = field(default_factory=str)
     StructureErrors: List[str] = field(default_factory=list)
     SubmissionError: str = field(default_factory=str)
     FinalScore: int = field(default_factory=int)

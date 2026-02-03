@@ -44,7 +44,7 @@ class SubmissionStructureFixer:
 
     def copy_default_files(self, submission_path: str):
         for fileMetaData in self.defaultFilesToCopy:
-            new_path = os.path.join(submission_path, os.path.basename(fileMetaData["destinationPath"]))
+            new_path = os.path.join(submission_path, fileMetaData["destinationPath"])
             shutil.copy2(fileMetaData["sourcePath"], new_path)
 
 
@@ -58,7 +58,11 @@ class SubmissionStructureFixer:
         """
         flat_files = {}
         for dirpath, _, files in os.walk(root):
+            if "__MACOSX" in dirpath:
+                continue
             for f in files:
+                if f == ".DS_Store" or f.startswith("._"):
+                    continue
                 flat_files[f.lower()] = os.path.join(dirpath, f)
         return flat_files
 
@@ -108,6 +112,7 @@ class SubmissionStructureFixer:
 
             matched_file = self._match_misnomer(flat_files, misnomers, expected_name)
             if matched_file:
+                print(flat_files[matched_file], dest_file_path)
                 shutil.copy2(flat_files[matched_file], dest_file_path)
                 continue
 
@@ -143,4 +148,3 @@ class SubmissionStructureFixer:
                 "Error": str(e)
             }))
             raise
-

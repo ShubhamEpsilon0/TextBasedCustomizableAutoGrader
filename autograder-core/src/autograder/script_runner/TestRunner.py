@@ -85,11 +85,11 @@ class TestRunner(ABC):
         Compare output with expected output (if provided).
         """
         expected = ""
-        passed = True
+        passed = False
         similarity_report = []
         if not os.path.exists(expectedOutputFile):
             return {
-                "passed": False,
+                "passed": passed,
                 "output": actualOutput,
                 "expected": "",
                 "error": f"Expected output file not found: {expectedOutputFile}",
@@ -110,10 +110,9 @@ class TestRunner(ABC):
             similarity_report = self.computeSimilarityReport(
                 expectedLines, actualLines
             )
-
         return {
             "passed": passed,
-            "output": actualOutput if not passed else "",
+            "output": actualOutput,
             "expected": expected,
             "error": errorOutput,
             "similarity_report": similarity_report

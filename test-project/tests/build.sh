@@ -17,7 +17,6 @@ fi
 
 # Navigate to the kernel_module directory inside the submission path using pushd
 KERNEL_MODULE_PATH="$SUBMISSION_PATH/kernel_module"
-
 if [ ! -d "$KERNEL_MODULE_PATH" ]; then
     echo "Error: The 'kernel_module' directory does not exist inside the submission path." >&2
     exit 1

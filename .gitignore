@@ -3,3 +3,5 @@ __pycache__/
 submissions/
 studentNames.txt
 *.xlsx
+.venv
+venv

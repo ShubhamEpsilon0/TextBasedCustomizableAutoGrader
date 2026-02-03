@@ -1,8 +1,12 @@
 {
     "fatalErrors": [
-        "Make Install Failed",
+        "Failed to insert the kernel module.",
+        "ailed to remove the kernel module.",
         "codec can't decode byte"
     ],
+    "placeholderRegex":{
+    "STUDENT NAME": ".*"
+    },
     "folderStructure": [
     {
         "fileName": "cse330-kernel-files-project1",
@@ -76,13 +80,24 @@
     "submissionsPath": "../test-project/submissions/",
     "testFolderPath": "../test-project/tests/",
     "testConfig": {
-        "buildScriptPath": "",
-        "buildTestRunnerType": "",
-        "testCases": [  
-            {
+        "buildScriptPath": "../test-project/tests/build.sh",
+        "buildTestRunnerType": "ShellScript",
+        "testCases": [
+             {
                 "testName": "test-case1",
+                "buildRequired": false,
                 "runScriptPath": "evaluateScreenshot.py",
                 "testRunnerType": "Python",
+                "inputLine": "",
+                "timeout": 30,
+                "expectedOutputFilePath": "expected_output.txt",
+                "maxTestScore": 50
+            },
+            {
+                "testName": "test-case2",
+                "buildRequired": true,
+                "runScriptPath": "run.sh",
+                "testRunnerType": "ShellScript",
                 "inputLine": "",
                 "timeout": 30,
                 "expectedOutputFilePath": "expected_output.txt",

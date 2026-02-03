@@ -12,14 +12,22 @@ class RunTestsStep(PipelineStep):
             grader._refresh_monitor()
 
             runner = grader.scriptRunners[tc["testRunnerType"]]
-
-            res = runner.run(
-                ctx.workspace,
-                os.path.join(grader.config["testFolderPath"], tc["testName"]),
-                tc["inputLine"],
-                os.path.join(grader.config["testFolderPath"],tc["testName"],tc["expectedOutputFilePath"],),
-                os.path.join(grader.config["testFolderPath"],tc["testName"],tc["runScriptPath"],), 
-            )
+            
+            if tc["buildRequired"] and not ctx.result.BuildPassed:
+                res = {
+                    "passed": False,
+                    "output": "",
+                    "error": "Build Failed",
+                    "similarity_report": []
+                }
+            else:
+                res = runner.run(
+                    ctx.workspace,
+                    os.path.join(grader.config["testFolderPath"], tc["testName"]),
+                    tc["inputLine"],
+                    os.path.join(grader.config["testFolderPath"],tc["testName"],tc["expectedOutputFilePath"],),
+                    os.path.join(grader.config["testFolderPath"],tc["testName"],tc["runScriptPath"],), 
+                )
 
             ctx.result.TestResults.append(
                 TestResult(

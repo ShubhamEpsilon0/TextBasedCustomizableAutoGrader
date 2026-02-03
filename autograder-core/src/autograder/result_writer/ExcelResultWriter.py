@@ -45,8 +45,10 @@ class ExcelResultWriter(ResultWriter):
             ("Student Name","", "") : resultObject.StudentName,
             ("Asu Id","", ""): resultObject.AsuId,
             ("Fatal Errors","", ""): resultObject.FatalErrors,
-            ("Structure Errors", "", ""): json.dumps(resultObject.StructureErrors),
-            ("Submission Error", "", ""): resultObject.SubmissionError,
+            ("Build Passed","", ""): resultObject.BuildPassed,
+            ("Build Errors","", ""): resultObject.BuildError,
+            #("Structure Errors", "", ""): json.dumps(resultObject.StructureErrors),
+            #("Submission Error", "", ""): resultObject.SubmissionError,
             ("Final Score","",""): resultObject.FinalScore,
         }
         res.update(passedSetDict)

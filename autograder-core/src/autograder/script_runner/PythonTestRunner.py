@@ -110,15 +110,17 @@ class PythonTestRunner(TestRunner):
         If .venv exists, use its python interpreter.
         Otherwise fallback to sys.executable.
         """
-        venv_path = os.path.join(workingDir, ".venv")
-
-        if os.path.isdir(venv_path):
-            if os.name == "nt":
+        
+        if os.name == "nt":
+            venv_path = os.path.join(workingDir, ".venv")
+            if os.path.isdir(venv_path):
                 python_path = os.path.join(venv_path, "Scripts", "python.exe")
-            else:
+        else:
+            venv_path = os.path.join(workingDir, "venv")
+            if os.path.isdir(venv_path):
                 python_path = os.path.join(venv_path, "bin", "python")
 
-            if os.path.isfile(python_path):
-                return python_path
+        if os.path.isfile(python_path):
+            return python_path
 
         return sys.executable

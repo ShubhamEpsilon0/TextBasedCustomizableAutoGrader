@@ -42,8 +42,8 @@ class AutoGrader:
 
         self._initialize_script_runners()
         self._initialize_result_writer()
-        self._initialize_progress_logger()
         self._initialize_monitoring()
+        self._initialize_progress_logger()
         self._initialize_submission_manager()
 
         self._setup_pipeline()
@@ -115,8 +115,11 @@ class AutoGrader:
         self.writer.InitializeWriter()
 
     def _initialize_script_runners(self):
+        buildScript = self.config["testConfig"].get("buildScriptPath")
+        #Todo: Fix this
+        #buildRunnerType = self.config["testConfig"].get("buildTestRunnerType
         self.scriptRunners = {
-            "ShellScript": ShellScriptTestRunner(self.logger, self.config.get("fatalErrors", []), self.config.get("placeholderRegex", {})),
+            "ShellScript": ShellScriptTestRunner(self.logger, buildScript, self.config.get("fatalErrors", []), self.config.get("placeholderRegex", {})),
             "Python": PythonTestRunner(self.logger, self.config.get("fatalErrors", []), self.config.get("placeholderRegex", {}))
         }
 
@@ -144,8 +147,8 @@ class AutoGrader:
 
     def _initialize_progress_logger(self):
         self.progressLogger = ProgressLogger(self.resumeLogArea)
-        self.progressLogger.InitializeForLogging()
         self._load_progress()
+        self.progressLogger.InitializeForLogging()
 
     def _initialize_submission_manager(self):
         self.submissionManager = SubmissionManager(self.config, self.logger)
@@ -174,6 +177,7 @@ class AutoGrader:
         self.currentGradingState = CurrentOperationState.fromDict(
             last[self.CURRENT_OPERATION_TABLENAME]
         )
+
         self.gradedSubmissions = set(last[self.GRADED_SUBMISSIONS])
 
         self.blacklistedSubmissions = set(

@@ -27,35 +27,46 @@ fi
 pushd "$KERNEL_MODULE_PATH" > /dev/null || exit
 
 # Insert the kernel module, suppressing output
-insmod *.ko > /dev/null 2>&1
+out=$(sudo insmod my_name.ko 2>&1)
 
 # Check if the module was inserted successfully
 if [ $? -ne 0 ]; then
-    echo "Error: Failed to insert the kernel module." >&2
+    echo "Error: Failed to insert the kernel module. Error => $out" >&2
     # Remove the kernel module in case of failure
-    rmmod *.ko > /dev/null 2>&1
+    sudo rmmod my_name > /dev/null 2>&1
     popd > /dev/null
     exit 1
 fi
 
 # Search for "hello" in the dmesg log, suppressing other output
-dmesg | grep -i "hello" > /dev/null 2>&1
+out=$(sudo dmesg | grep -i "hello" 2>&1) #> /dev/null 2>&1
 
 # Check if "hello" was found in the dmesg log
 if [ $? -eq 0 ]; then
     # If found, print "Success" along with the message
+    echo $out
     echo "Success: 'hello' found in dmesg log."
 else
     # If not found, print the last 5 lines of the dmesg log and "Failure"
-    echo "Failure: 'hello' not found in dmesg log."
-    dmesg | tail -n 5
+    echo "Failure: 'hello' not found in dmesg log. Error => $out" >&2
+    sudo dmesg | tail -n 5 >&2
 fi
 
 #clean dmesg log
-dmesg -C
+sudo dmesg -C
 
 # Remove the kernel module, suppressing output
-rmmod *.ko > /dev/null 2>&1
+out=$(sudo rmmod my_name 2>&1)
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to remove the kernel module. Error => $out" >&2
+    # Remove the kernel module in case of failure
+    sudo rmmod my_name > /dev/null 2>&1
+    popd > /dev/null
+    exit 1
+fi
+
+
+
 
 # Return to the previous directory using popd, suppress output
 popd > /dev/null

@@ -29,6 +29,7 @@ class ShellScriptTestRunner(TestRunner):
             return True, "", ""
         
         try:
+
             result = subprocess.run(
                 [script, studentSubmissionPath],
                 stdout=subprocess.PIPE,
@@ -46,6 +47,13 @@ class ShellScriptTestRunner(TestRunner):
             return result.returncode == 0, output, error
 
         except subprocess.SubprocessError as e:
+            self.logger.error(self._log_template({
+                "StudentSubmissionPath": studentSubmissionPath,
+                "BuildScript": script,
+                "Error": str(e)
+            }))
+            return False, None, str(e)
+        except Exception as e:
             self.logger.error(self._log_template({
                 "StudentSubmissionPath": studentSubmissionPath,
                 "BuildScript": script,

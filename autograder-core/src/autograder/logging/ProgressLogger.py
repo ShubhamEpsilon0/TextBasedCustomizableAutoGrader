@@ -57,15 +57,18 @@ class ProgressLogger:
     def loadProgressLog(self) -> list:
         try:
             if not os.path.exists(self.logPath):
+                print("log file not found...")
                 return []  # Return empty list if log file does not exist
-            
+
             with open(self.logPath, 'r') as logFile:
                 lines = logFile.readlines()
+
                 try:
                 # Parse JSON lines into a list
                     return [json.loads(line.strip()) for line in lines if line.strip()]
                 except json.JSONDecodeError as e:
-                    return lines
+                    print("JSON Decode Error", str(e))
+                    return []
         except Exception as e:
             print(f"Error loading progress log: {e}")
             return []
