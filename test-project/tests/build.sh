@@ -35,11 +35,13 @@ fi
 
 # Compile the kernel module using the Makefile, suppress all output
 #make > /dev/null 2>&1
-make
+out=$(make)
 
 # Check if the compilation was successful
 if [ $? -ne 0 ]; then
-    echo "Error: Kernel module compilation failed." >&2
+    echo "Error: Kernel module compilation failed. Error => $out" >&2
+    popd > /dev/null
+    exit 1
 fi
 
 # Return to the previous directory using popd, suppress output
