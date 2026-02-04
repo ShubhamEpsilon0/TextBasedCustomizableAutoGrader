@@ -27,6 +27,11 @@ VENV_DIR="venv"
 
 [[ -f "$REQ_FILE" ]] || error "$REQ_FILE not found in current directory"
 
+
+
+info "Installing python3.12-venv"
++sudo apt install -y python3.12-venv || error "Failed to install python3.12-venv"
+
 # ---------- Create virtual environment ----------
 if [[ ! -d "$VENV_DIR" ]]; then
     info "Creating virtual environment..."

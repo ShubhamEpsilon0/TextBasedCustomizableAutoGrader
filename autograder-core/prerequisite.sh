@@ -66,6 +66,8 @@ command -v poetry >/dev/null 2>&1 || error "Poetry not found in PATH after insta
 
 # ---------- Install Python dependencies ----------
 info "Installing Python dependencies via Poetry..."
+info "Note: If Poetry Insall fails due to Unable to uninstall pyopenxl, uncomment below line in script and re-run."
+#poetry config keyring.enabled false
 poetry install || error "poetry install failed"
 
 info "🎉 All prerequisites installed successfully!"
