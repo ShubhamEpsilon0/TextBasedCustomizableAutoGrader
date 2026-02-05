@@ -36,6 +36,9 @@ sudo apt install -y python3-pip || error "Failed to install python3-pip"
 info "Installing tesseract-ocr..."
 sudo apt install -y tesseract-ocr || error "Failed to install tesseract-ocr"
 
+info "Installing curl..."
+sudo apt install -y curl || error "Failed to install curl"
+
 # ---------- Install Poetry ----------
 if ! command -v poetry >/dev/null 2>&1; then
     info "Installing Poetry..."
