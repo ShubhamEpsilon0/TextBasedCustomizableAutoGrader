@@ -27,7 +27,7 @@ fi
 pushd "$KERNEL_MODULE_PATH" > /dev/null || exit
 
 # Insert the kernel module, suppressing output
-out=$(sudo insmod my_name.ko 2>&1)
+out=$(sudo insmod my_name.ko charParameter=”Fall” intParameter=2025 2>&1)
 
 # Check if the module was inserted successfully
 if [ $? -ne 0 ]; then
@@ -39,7 +39,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Search for "hello" in the dmesg log, suppressing other output
-out=$(sudo dmesg | grep -i "hello" 2>&1) #> /dev/null 2>&1
+out=$(sudo dmesg | grep -Ei "hello.*i am .*student.*cse330.*fall.*2025") #> /dev/null 2>&1
 
 # Check if "hello" was found in the dmesg log
 if [ $? -eq 0 ]; then
@@ -64,9 +64,6 @@ if [ $? -ne 0 ]; then
     popd > /dev/null
     exit 1
 fi
-
-
-
 
 # Return to the previous directory using popd, suppress output
 popd > /dev/null
