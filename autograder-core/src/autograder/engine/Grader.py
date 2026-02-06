@@ -90,6 +90,8 @@ class AutoGrader:
         except SystemExit as e:
             self.blacklistedSubmissions.add(self.currentGradingState.CurrentStudentFile)
             self._checkpoint()
+            ctx.result.FatalErrors = "Submission Blacklisted"
+            self.writer.writeTestResult(ctx.result)
             self.logger.error({
                 "Component": "AutoGrader",
                 "Operation": "grade",
@@ -99,6 +101,8 @@ class AutoGrader:
         except Exception as e:
             self.blacklistedSubmissions.add(self.currentGradingState.CurrentStudentFile)
             self._checkpoint()
+            ctx.result.FatalErrors = "Submission Blacklisted"
+            self.writer.writeTestResult(ctx.result)
             self.logger.error({
                 "Component": "AutoGrader",
                 "Operation": "grade",

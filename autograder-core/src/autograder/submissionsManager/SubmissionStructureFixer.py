@@ -112,7 +112,6 @@ class SubmissionStructureFixer:
 
             matched_file = self._match_misnomer(flat_files, misnomers, expected_name)
             if matched_file:
-                print(flat_files[matched_file], dest_file_path)
                 shutil.copy2(flat_files[matched_file], dest_file_path)
                 continue
 
