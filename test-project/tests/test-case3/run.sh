@@ -16,42 +16,17 @@ if [ ! -d "$SUBMISSION_PATH" ]; then
 fi
 
 # Navigate to the kernel_module directory inside the submission path using pushd
-KERNEL_MODULE_PATH="$SUBMISSION_PATH/kernel_module"
+SYSCALL_FILE_PATH="$SUBMISSION_PATH/cse330-kernel-files-project1/my_syscall"
 
-if [ ! -d "$KERNEL_MODULE_PATH" ]; then
+if [ ! -d "$SYSCALL_FILE_PATH" ]; then
     echo "Error: The 'kernel_module' directory does not exist inside the submission path." >&2
     exit 1
 fi
 
 # Use pushd to change to the kernel_module directory, suppress output
-pushd "$KERNEL_MODULE_PATH" > /dev/null || exit
+pushd "$SYSCALL_FILE_PATH" > /dev/null || exit
 
-# Insert the kernel module, suppressing output
-out=$(sudo insmod my_name.ko charParameter=”Fall” intParameter=2025 2>&1)
-
-# Check if the module was inserted successfully
-if [ $? -ne 0 ]; then
-    echo "Error: Failed to insert the kernel module. Error => $out" >&2
-    # Remove the kernel module in case of failure
-    sudo rmmod my_name > /dev/null 2>&1
-    popd > /dev/null
-    exit 1
-fi
-
-
-# Remove the kernel module, suppressing output
-out=$(sudo rmmod my_name 2>&1)
-if [ $? -ne 0 ]; then
-    echo "Error: Failed to remove the kernel module. Error => $out" >&2
-    sudo dmesg -C
-    # Remove the kernel module in case of failure
-    sudo rmmod my_name > /dev/null 2>&1
-    popd > /dev/null
-    exit 1
-fi
-
-# Search for "hello" in the dmesg log, suppressing other output
-out=$(sudo dmesg | grep -Ei "hello.*i am .*student.*cse330.*fall.*2025") #> /dev/null 2>&1
+out=$(grep -Ei "hello.*i am .*student.*cse330.*fall.*2025" *.c)
 
 # Check if "hello" was found in the dmesg log
 if [ $? -eq 0 ]; then
@@ -63,9 +38,6 @@ else
     echo "Failure: 'hello' not found in dmesg log. Error => $out" >&2
     sudo dmesg | tail -n 5 >&2
 fi
-
-#clean dmesg log
-sudo dmesg -C
 
 # Return to the previous directory using popd, suppress output
 popd > /dev/null

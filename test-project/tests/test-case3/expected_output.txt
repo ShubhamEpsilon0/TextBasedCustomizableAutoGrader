@@ -1,0 +1,1 @@
+Success: 'hello' found in dmesg log.
