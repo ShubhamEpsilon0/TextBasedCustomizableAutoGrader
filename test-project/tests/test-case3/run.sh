@@ -26,7 +26,8 @@ fi
 # Use pushd to change to the kernel_module directory, suppress output
 pushd "$SYSCALL_FILE_PATH" > /dev/null || exit
 
-out=$(grep -Ei "hello.*i am .*student.*cse330.*fall.*2025" *.c)
+out=$(grep -Ei "This.*(system[[:space:]]*call|syscall)[[:space:]]+([A-Za-z]+([[:space:]]+[A-Za-z]+)*)[[:space:]]+implemented" my_syscall.c)
+
 
 # Check if "hello" was found in the dmesg log
 if [ $? -eq 0 ]; then
@@ -35,6 +36,7 @@ if [ $? -eq 0 ]; then
     echo "Success: 'hello' found in dmesg log."
 else
     # If not found, print the last 5 lines of the dmesg log and "Failure"
+    echo $(ls)
     echo "Failure: 'hello' not found in dmesg log. Error => $out" >&2
     sudo dmesg | tail -n 5 >&2
 fi
