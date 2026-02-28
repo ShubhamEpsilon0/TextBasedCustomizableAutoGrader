@@ -1,0 +1,7 @@
+###[thread_init_module]###CSE330 Project Kernel Module Inserted
+###[thread_init_module]###Kernel module received the following inputs: UID:%d, Buffer-Size:5, No of Producer:0, No of Consumer:1
+###[thread_init_module]###[kConsumer-1] kthread Consumer Created Successfully 
+###[consumer_thread_function]###[kConsumer-1] Consumer Thread stopped.
+###[thread_exit_module]###Total number of items produced:0
+###[thread_exit_module]###Total number of items consumed:0
+###[thread_exit_module]###CSE330 Project Kernel Module Removed
