@@ -1,0 +1,12 @@
+###[thread_init_module]###CSE330 Project Kernel Module Inserted
+###[thread_init_module]###Kernel module received the following inputs: UID:%d, Buffer-Size:5, No of Producer:1, No of Consumer:0 
+###[thread_init_module]###[kProducer-1] kthread Producer Created Successfully 
+###[producer_thread_function]###[kProducer-1] Produce-Item#:1 at buffer index: 0 for PID:
+###[producer_thread_function]###[kProducer-1] Produce-Item#:2 at buffer index: 1 for PID:
+###[producer_thread_function]###[kProducer-1] Produce-Item#:3 at buffer index: 2 for PID:
+###[producer_thread_function]###[kProducer-1] Produce-Item#:4 at buffer index: 3 for PID:
+###[producer_thread_function]###[kProducer-1] Produce-Item#:5 at buffer index: 4 for PID:
+###[producer_thread_function]###[kProducer-1] Producer Thread stopped.
+###[thread_exit_module]###Total number of items produced:5
+###[thread_exit_module]###Total number of items consumed:0
+###[thread_exit_module]###CSE330 Project Kernel Module Removed

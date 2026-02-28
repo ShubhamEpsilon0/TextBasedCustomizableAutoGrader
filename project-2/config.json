@@ -1,0 +1,98 @@
+{
+  "fatalErrors": [
+    "Error: Failed to insert kernel module.",
+    "Error: Failed to remove kernel module.",
+    "Error: Clean up Failed",
+    "codec can't decode byte"
+  ],
+  "placeholderRegex": {},
+  "folderStructure": [
+    {
+      "fileName": "kernel_module",
+      "fileType": 0,
+      "content": [
+        {
+          "fileName": "producer_consumer.c",
+          "misnomers": [".*\\.c"],
+          "fileType": 1
+        }
+      ]
+    }
+  ],
+  "defaultFilesToCopy": [
+    {
+      "sourcePath": "../project-2/defaultFiles/Makefile",
+      "destinationPath": "kernel_module/Makefile"
+    }
+  ],
+  "roosterPath": "../studentNames.txt",
+  "submissionsPath": "../project-2/submissions/",
+  "testFolderPath": "../project-2/tests/",
+  "testConfig": {
+    "buildScriptPath": "../project-2/scripts/build.sh",
+    "buildTestRunnerType": "ShellScript",
+    "testCases": [
+      {
+        "testName": "test-case1",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "10 5 1 0 25",
+        "timeout": 30,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 10
+      },
+      {
+        "testName": "test-case2",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "10 5 0 1 25",
+        "timeout": 30,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 10
+      },
+      {
+        "testName": "test-case3",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "10 50 1 1 25",
+        "timeout": 30,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 20
+      },
+      {
+        "testName": "test-case4",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "100 50 1 1 25",
+        "timeout": 30,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 30
+      },
+      {
+        "testName": "test-case5",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "500 50 1 1 100",
+        "timeout": 30,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 30
+      },
+      {
+        "testName": "test-case6",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "100 50 1 2 25",
+        "timeout": 30,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 10
+      }
+    ]
+  },
+  "resultsFilePath": "../project-2/results.xlsx"
+}
