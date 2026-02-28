@@ -1,5 +1,4 @@
 ###[thread_init_module]###CSE330 Project Kernel Module Inserted
-###[thread_init_module]###Kernel module received the following inputs: UID:<>, Buffer-Size:50, No of Producer:1, No of Consumer:1 
 ###[thread_init_module]###[kProducer-1] kthread Producer Created Successfully 
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:1 at buffer index: 0 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:2 at buffer index: 1 for PID:
