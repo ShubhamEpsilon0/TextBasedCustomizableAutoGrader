@@ -106,10 +106,10 @@ class TestRunner(ABC):
         passed = matcher.match(expectedLines, actualLines)
 
         similarity_report = []
-        if not passed and len(expectedLines) <= 100:
-            similarity_report = self.computeSimilarityReport(
-                expectedLines, actualLines
-            )
+        #if not passed and len(expectedLines) <= 100:
+        #    similarity_report = self.computeSimilarityReport(
+        #        expectedLines, actualLines
+        #    )
         return {
             "passed": passed,
             "output": actualOutput,

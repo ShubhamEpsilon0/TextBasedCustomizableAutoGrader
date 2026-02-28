@@ -25,7 +25,7 @@ class ExpectedOutputMatcher:
                 regex_line = regex_line.replace(escaped, f"({pattern})")
 
             # allow extra text before/after
-            regex_line = "^" + regex_line + "$"
+            # regex_line = "^" + regex_line + "$"
             compiled.append(re.compile(regex_line))
 
         return compiled
@@ -33,8 +33,7 @@ class ExpectedOutputMatcher:
     def match(self, expectedLines: List[str], actualLines: List[str]) -> bool:
         compiledPatterns = self.compileExpectedLines(expectedLines)
         actualSet = set(actualLines)
-
         return all(
-            any(pattern.fullmatch(line) for line in actualSet)
+            any(pattern.search(line) for line in actualSet)
             for pattern in compiledPatterns
         )

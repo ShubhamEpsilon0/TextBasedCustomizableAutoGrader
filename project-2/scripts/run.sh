@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 percent_diff_time() {
     local t1="$1"
@@ -38,14 +38,17 @@ percent_diff_time() {
 
 # --- Trap for cleanup on exit or error ---
 cleanup() {
-    dmesg -C >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
-    pkill -u "$uid" >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
-    rm -f var || echo "Error: Clean up Failed" >&2
+    name="test_cse330"
+    uid=$(id -u "$name")
+    sudo dmesg -C >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
+    if pgrep -u "$uid" >/dev/null; then
+        sudo pkill -u "$uid" >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
+    fi
 }
 trap cleanup EXIT
 
 # --- Check argument count ---
-if [ $# -ne 7 ]; then
+if [ $# -ne 6 ]; then
   echo "Error: Usage: $0  <submission_path> <num_processes> <buffer_size> <num_producers> <num_consumers> <dmesg_lines>" >&2
   exit 1
 fi
@@ -66,17 +69,18 @@ if ! [[ "$num" =~ ^[0-9]+$ ]]; then
 fi
 
 # --- Save num to file ---
-echo "$num" > var || { echo "Error: Failed to write var" >&2; exit 1; }
-
+name="test_cse330"
+home_dir="/home/$name"
 # --- Run process generator as the test user ---
 uid=$(id -u "$name")
-process_gen_path="$path_to_build_script/process_gen/process_generator"
-if [ ! -x "$process_gen_path" ]; then
-    echo "Error: Process generator executable not found: $process_gen_path" >&2
-    exit 1
-fi
+process_gen_path="$home_dir/process_generator"
 
-su "$name" -c "$process_gen_path" >/dev/null 2>&1 &
+#su "$name" -c "whoami && ls -l $process_gen_path"
+su "$name" -c "$process_gen_path $num" >/dev/null 2>&1 &
+
+#cmd="su \"$name\" -c \"$process_gen_path $num\""
+#echo "Executing: $cmd"
+
 pg_pid=$!
 sleep 10
 
@@ -88,9 +92,8 @@ if [ ! -x "$ps_time_script" ]; then
 fi
 
 ps_output=$(bash "$ps_time_script" "$uid" &)
-
 # --- Insert kernel module ---
-kernel_module="$path_to_kernel_module/producer_consumer.ko"
+kernel_module="$path_to_kernel_module/kernel_module/producer_consumer.ko"
 if [ ! -f "$kernel_module" ]; then
     echo "Error: Kernel module not found: $kernel_module" >&2
     exit 1
@@ -112,18 +115,13 @@ if [ $? -ne 0 ]; then
 fi
 
 # --- Print dmesg tail ---
-code_output=$(dmesg | tail -n "$dmesg_lines")
+code_output=$(sudo dmesg) # | tail -n "$dmesg_lines")
 echo $code_output
 
-
 # Extract PS Output Timestamp
-ps_timestamp=$( [[ $ps_output =~ ([0-9]+:[0-5][0-9]:[0-5][0-9]) ]] && echo "${BASH_REMATCH[1]}" )
+ps_timestamp=$(echo "$ps_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+')
 # Extract Code output Timestamp
-code_timestamp="${code_output##*[[:space:]]}"
-
-
-echo $ps_timestamp
-echo $code_timestamp
+code_timestamp=$(echo "$code_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+')
 
 if [[ "$prod" -gt 0 && "$cons" -gt 0 ]]; then
     percent_diff_time "$ps_timestamp" "$code_timestamp"
