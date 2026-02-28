@@ -75,14 +75,22 @@ home_dir="/home/$name"
 uid=$(id -u "$name")
 process_gen_path="$home_dir/process_generator"
 
-#su "$name" -c "whoami && ls -l $process_gen_path"
-su "$name" -c "$process_gen_path $num" >/dev/null 2>&1 &
+num_process_running=$(pgrep -u "$uid" | wc -l)
 
-#cmd="su \"$name\" -c \"$process_gen_path $num\""
-#echo "Executing: $cmd"
-
-pg_pid=$!
-sleep 10
+if [[ "$num_process_running" -lt "$num" ]]; then
+    to_spawn=$((num - num_process_running))
+    su "$name" -c "$process_gen_path $to_spawn" >/dev/null 2>&1 &
+    pg_pid=$!
+    sleep 10
+else
+    if [[ "$num_process_running" -gt "$num" ]]; then
+        # Kill excess processes
+        pids_to_kill=$(pgrep -u "$uid" | head -n $((num_process_running - num)))
+        if [ -n "$pids_to_kill" ]; then
+            sudo kill $pids_to_kill >/dev/null 2>&1 || echo "Error: Failed to kill excess processes" >&2
+        fi
+    fi
+fi
 
 # --- Run ps_time.sh ---
 ps_time_script="$path_to_build_script/ps_time.sh"
