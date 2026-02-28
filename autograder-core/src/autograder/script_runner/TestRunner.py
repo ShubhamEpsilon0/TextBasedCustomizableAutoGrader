@@ -61,6 +61,10 @@ class TestRunner(ABC):
     ) -> Dict:
         pass
 
+    @abstractmethod
+    def clean(self, cleanupScript: str) -> tuple[bool, str]:
+        pass
+
     # -----------------------------------------------------------
     # Shared utilities
     # -----------------------------------------------------------

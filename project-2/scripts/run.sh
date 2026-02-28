@@ -38,12 +38,12 @@ percent_diff_time() {
 
 # --- Trap for cleanup on exit or error ---
 cleanup() {
-    name="test_cse330"
-    uid=$(id -u "$name")
+    # name="test_cse330"
+    # uid=$(id -u "$name")
     sudo dmesg -C >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
-    if pgrep -u "$uid" >/dev/null; then
-        sudo pkill -u "$uid" >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
-    fi
+    # if pgrep -u "$uid" >/dev/null; then
+    #     sudo pkill -u "$uid" >/dev/null 2>&1 || echo "Error: Clean up Failed" >&2
+    # fi
 }
 trap cleanup EXIT
 

@@ -170,7 +170,7 @@ class AutoGrader:
             CopyDefaultFilesStep(),
             BuildStep(),
             RunTestsStep(),
-            # CleanupStep()
+            CleanupStep()
         ]
 
     def _load_progress(self):

@@ -21,6 +21,9 @@ class PythonTestRunner(TestRunner):
     def build(self, studentSubmissionPath: str, buildScriptOverride: Optional[str] = None):
         # Python generally doesn't require build
         return True, "", ""
+    
+    def clean (self, cleanupScript: str) -> tuple[bool, str]:
+        pass
 
     def run(
         self,

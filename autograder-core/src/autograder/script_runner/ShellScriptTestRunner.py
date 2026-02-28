@@ -144,3 +144,16 @@ class ShellScriptTestRunner(TestRunner):
                 "error": f"Unexpected error: {str(e)}",
                 "similarity_report": []
             }
+        
+    def clean(self, script_path):
+        # No cleanup needed for shell scripts
+        try:
+            proc = subprocess.run(
+                ["bash", script_path],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=10
+            )
+            return proc.returncode == 0, proc.stdout.decode() + proc.stderr.decode()
+        except Exception as e:
+            return False, str(e)

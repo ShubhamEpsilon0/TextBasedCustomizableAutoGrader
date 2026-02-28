@@ -30,6 +30,10 @@
   "submissionsPath": "../project-2/submissions/",
   "testFolderPath": "../project-2/tests/",
   "testConfig": {
+    "cleanupConfig": {
+      "cleanUpScriptPath": "../project-2/scripts/cleanup.sh",
+      "cleanUpScriptRunnerType": "ShellScript"
+    },
     "buildScriptPath": "../project-2/scripts/build.sh",
     "buildTestRunnerType": "ShellScript",
     "testCases": [
