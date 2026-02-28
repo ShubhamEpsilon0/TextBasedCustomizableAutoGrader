@@ -61,13 +61,14 @@ void create_process(int nprocesses, int batch_size)
 int main(int argc, char *argv[])
 {
 	int num;
-	FILE *fp;
-	char buffer[10];
-	int batch_size;
-	
-	fp = fopen("var", "r");
-	fread(buffer, 10, 1, fp);
-	num = atoi(buffer) - 1; //Program produces n-1 children and 1 parent process
+        int batch_size;
+
+        if (argc < 2) {
+             fprintf(stderr, "Usage: %s <number>\n", argv[0]);
+             return 1;
+        }
+        
+        num = atoi(argv[1]) - 1;
 
 	if (num < 0)
 	{
@@ -79,7 +80,6 @@ int main(int argc, char *argv[])
 	}
 	batch_size  = get_batch_size(num);
 	create_process(num, batch_size);
-	fclose(fp);
 	wait(NULL);
 	return 0;
 }

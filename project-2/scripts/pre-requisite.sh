@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 build_dir="./process_gen"
 if [ ! -d "$build_dir" ]; then
@@ -8,7 +8,7 @@ fi
 
 pushd "$build_dir"
     make clean
-    make >/dev/null
+    make
 popd 
 
 # --- Setup user ---
@@ -17,11 +17,16 @@ home_dir="/home/$name"
 
 useradd "$name" 
 mkdir -p "$home_dir" 
-chmod 755 /home || true
-chown -R "$name" "$home_dir" 
-chmod 700 "$home_dir" || true
+sudo chmod 755 /home || true
+sudo chown -R "$name" "$home_dir" 
+sudo chmod 700 "$home_dir" || true
+
+# Copy Process Gen to User
+sudo cp $build_dir/process_generator "$home_dir/"
+sudo chown "$name:$name" "$home_dir/process_generator"
+sudo chmod 700 "$home_dir/process_generator"
 
 # --- Ensure /dev/null exists ---
 if [ ! -c /dev/null ]; then
-  mknod -m 666 /dev/null c 1 3 
+  sudo mknod -m 666 /dev/null c 1 3 
 fi
