@@ -1,5 +1,4 @@
-###[thread_init_module]###CSE330 Project Kernel Module Inserted
-###[thread_init_module]###[kProducer-1] kthread Producer Created Successfully 
+###[thread_init_module]###CSE330 Project-2 Kernel Module Inserted
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:1 at buffer index: 0 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:12 at buffer index: 11 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:23 at buffer index: 22 for PID:
@@ -9,9 +8,8 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:67 at buffer index: 16 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:78 at buffer index: 27 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:89 at buffer index: 38 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:99 at buffer index: 48 for PID:
+###[producer_thread_function]###[kProducer-1] Produce-Item#:100 at buffer index: 49 for PID:
 ###[producer_thread_function]###[kProducer-1] Producer Thread stopped.
-###[thread_init_module]###[kConsumer-1] kthread Consumer Created Successfully
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-1 on buffer index:0::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-12 on buffer index:11::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-23 on buffer index:22::PID:
@@ -21,9 +19,9 @@
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-67 on buffer index:16::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-78 on buffer index:27::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-89 on buffer index:38::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-99 on buffer index:48::PID:
+###[consumer_thread_function]###[kConsumer-1] Consumed Item#-100 on buffer index:49::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumer Thread stopped.
-###[thread_exit_module]###Total number of items produced:100
-###[thread_exit_module]###Total number of items consumed:100
-###[thread_exit_module]###CSE330 Project Kernel Module Removed
+###[thread_exit_module]###Total number of items produced: 100
+###[thread_exit_module]###Total number of items consumed: 100
+###[thread_exit_module]###CSE330 Project 2 Kernel Module Removed
 Time Check Passed

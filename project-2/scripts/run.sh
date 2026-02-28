@@ -7,7 +7,7 @@ percent_diff_time() {
     # Convert HH:MM:SS to total seconds
     IFS=: read -r h1 m1 s1 <<< "$t1"
     IFS=: read -r h2 m2 s2 <<< "$t2"
-
+    
     local total1=$((10#$h1*3600 + 10#$m1*60 + 10#$s1))
     local total2=$((10#$h2*3600 + 10#$m2*60 + 10#$s2))
 
@@ -121,7 +121,7 @@ echo $code_output
 # Extract PS Output Timestamp
 ps_timestamp=$(echo "$ps_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+')
 # Extract Code output Timestamp
-code_timestamp=$(echo "$code_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+')
+code_timestamp=$(echo "$code_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+' |  tail -n1)
 
 if [[ "$prod" -gt 0 && "$cons" -gt 0 ]]; then
     percent_diff_time "$ps_timestamp" "$code_timestamp"
