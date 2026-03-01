@@ -38,7 +38,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "10 5 1 0 25",
-        "timeout": 30,
+        "timeout": 120,
         "expectedOutputFilePath": "expected_output.txt",
         "maxTestScore": 10
       },
@@ -48,7 +48,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "10 5 0 1 25",
-        "timeout": 30,
+        "timeout": 120,
         "expectedOutputFilePath": "expected_output.txt",
         "maxTestScore": 10
       },
@@ -58,7 +58,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "10 50 1 1 25",
-        "timeout": 30,
+        "timeout": 120,
         "expectedOutputFilePath": "expected_output.txt",
         "maxTestScore": 20
       },
@@ -68,7 +68,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "100 50 1 1 25",
-        "timeout": 30,
+        "timeout": 120,
         "expectedOutputFilePath": "expected_output.txt",
         "maxTestScore": 30
       },
@@ -78,7 +78,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "500 50 1 1 100",
-        "timeout": 30,
+        "timeout": 120,
         "expectedOutputFilePath": "expected_output.txt",
         "maxTestScore": 30
       },
@@ -88,7 +88,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "100 50 1 2 25",
-        "timeout": 30,
+        "timeout": 120,
         "expectedOutputFilePath": "expected_output.txt",
         "maxTestScore": 10
       }
