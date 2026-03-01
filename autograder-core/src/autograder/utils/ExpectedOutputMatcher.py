@@ -24,9 +24,10 @@ class ExpectedOutputMatcher:
                 escaped = re.escape(f"<{placeholder}>")
                 regex_line = regex_line.replace(escaped, f"({pattern})")
 
+            regex_line = regex_line.replace(r"\ ", r"\s+")
             # allow extra text before/after
             # regex_line = "^" + regex_line + "$"
-            compiled.append(re.compile(regex_line))
+            compiled.append(re.compile(regex_line, re.IGNORECASE))
 
         return compiled
 
