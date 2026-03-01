@@ -8,6 +8,14 @@ percent_diff_time() {
     IFS=: read -r h1 m1 s1 <<< "$t1"
     IFS=: read -r h2 m2 s2 <<< "$t2"
     
+    h1=${h1:-0}
+    m1=${m1:-0}
+    s1=${s1:-0}
+
+    h2=${h2:-0}
+    m2=${m2:-0}
+    s2=${s2:-0}
+    
     local total1=$((10#$h1*3600 + 10#$m1*60 + 10#$s1))
     local total2=$((10#$h2*3600 + 10#$m2*60 + 10#$s2))
 
@@ -115,7 +123,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # --- Print dmesg  ---
-sudo dmesg
+code_output=$(sudo dmesg)
+echo "$code_output"
 
 # Extract PS Output Timestamp
 ps_timestamp=$(echo "$ps_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+')
