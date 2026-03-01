@@ -114,9 +114,8 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# --- Print dmesg tail ---
-code_output=$(sudo dmesg) # | tail -n "$dmesg_lines")
-echo $code_output
+# --- Print dmesg  ---
+sudo dmesg
 
 # Extract PS Output Timestamp
 ps_timestamp=$(echo "$ps_output" | grep -oE '[0-9]+:[0-9]+:[0-9]+')
