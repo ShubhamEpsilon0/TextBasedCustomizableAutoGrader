@@ -27,6 +27,7 @@ class RunTestsStep(PipelineStep):
                     tc["inputLine"],
                     os.path.join(grader.config["testFolderPath"],tc["testName"],tc["expectedOutputFilePath"],),
                     os.path.join(grader.config["testFolderPath"],tc["testName"],tc["runScriptPath"],), 
+                    tc.get("timeout", 120)
                 )
 
             ctx.result.TestResults.append(
