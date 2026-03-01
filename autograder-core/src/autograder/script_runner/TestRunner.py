@@ -103,9 +103,9 @@ class TestRunner(ABC):
         expectedLines = [l.strip() for l in expected.splitlines()]
 
         matcher = ExpectedOutputMatcher(self.placeholderRegex)
-        passed = matcher.match(expectedLines, actualLines)
+        passed, similarity_report = matcher.match(expectedLines, actualLines)
 
-        similarity_report = []
+        # similarity_report = []
         #if not passed and len(expectedLines) <= 100:
         #    similarity_report = self.computeSimilarityReport(
         #        expectedLines, actualLines
