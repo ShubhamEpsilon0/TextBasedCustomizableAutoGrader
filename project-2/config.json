@@ -1,7 +1,7 @@
 {
   "fatalErrors": [
-    "Error: Failed to insert kernel module.",
-    "Error: Failed to remove kernel module.",
+    "Error: Failed to insert kernel module",
+    "Error: Failed to remove kernel module",
     "Error: Clean up Failed",
     "codec can't decode byte"
   ],

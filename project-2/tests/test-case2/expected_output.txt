@@ -1,5 +1,2 @@
-###[thread_init_module]###CSE330 Project-2 Kernel Module Inserted
-###[consumer_thread_function]###[kConsumer-1] Consumer Thread stopped.
 ###[thread_exit_module]###Total number of items produced: 0
 ###[thread_exit_module]###Total number of items consumed: 0
-###[thread_exit_module]###CSE330 Project 2 Kernel Module Removed

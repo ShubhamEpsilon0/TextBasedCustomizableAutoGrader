@@ -1,4 +1,3 @@
-###[thread_init_module]###CSE330 Project-2 Kernel Module Inserted
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:1 at buffer index: 0 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:2 at buffer index: 1 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:3 at buffer index: 2 for PID:
@@ -7,15 +6,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:6 at buffer index: 5 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:7 at buffer index: 6 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:8 at buffer index: 7 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:9 at buffer index: 8 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:10 at buffer index: 9 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:11 at buffer index: 10 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:12 at buffer index: 11 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:13 at buffer index: 12 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:14 at buffer index: 13 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:15 at buffer index: 14 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:16 at buffer index: 15 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:17 at buffer index: 16 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:18 at buffer index: 17 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:19 at buffer index: 18 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:20 at buffer index: 19 for PID:
@@ -30,59 +20,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:29 at buffer index: 28 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:30 at buffer index: 29 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:31 at buffer index: 30 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:32 at buffer index: 31 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:33 at buffer index: 32 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:34 at buffer index: 33 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:35 at buffer index: 34 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:36 at buffer index: 35 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:37 at buffer index: 36 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:38 at buffer index: 37 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:39 at buffer index: 38 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:40 at buffer index: 39 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:41 at buffer index: 40 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:42 at buffer index: 41 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:43 at buffer index: 42 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:44 at buffer index: 43 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:45 at buffer index: 44 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:46 at buffer index: 45 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:47 at buffer index: 46 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:48 at buffer index: 47 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:49 at buffer index: 48 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:50 at buffer index: 49 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-1 on buffer index:0::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-2 on buffer index:1::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-3 on buffer index:2::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-4 on buffer index:3::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-5 on buffer index:4::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-6 on buffer index:5::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-7 on buffer index:6::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-8 on buffer index:7::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-9 on buffer index:8::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-10 on buffer index:9::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-11 on buffer index:10::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-12 on buffer index:11::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-13 on buffer index:12::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-14 on buffer index:13::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-15 on buffer index:14::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-16 on buffer index:15::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-17 on buffer index:16::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-18 on buffer index:17::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-19 on buffer index:18::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-20 on buffer index:19::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-21 on buffer index:20::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-22 on buffer index:21::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-23 on buffer index:22::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-24 on buffer index:23::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-25 on buffer index:24::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-26 on buffer index:25::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-27 on buffer index:26::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-28 on buffer index:27::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-29 on buffer index:28::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-30 on buffer index:29::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-31 on buffer index:30::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-32 on buffer index:31::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-33 on buffer index:32::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-34 on buffer index:33::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-35 on buffer index:34::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-36 on buffer index:35::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-37 on buffer index:36::PID:
@@ -123,21 +60,7 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:72 at buffer index: 21 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:73 at buffer index: 22 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:74 at buffer index: 23 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:75 at buffer index: 24 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:76 at buffer index: 25 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:77 at buffer index: 26 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:78 at buffer index: 27 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:79 at buffer index: 28 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:80 at buffer index: 29 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:81 at buffer index: 30 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:82 at buffer index: 31 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:83 at buffer index: 32 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:84 at buffer index: 33 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:85 at buffer index: 34 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:86 at buffer index: 35 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:87 at buffer index: 36 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:88 at buffer index: 37 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:89 at buffer index: 38 for PID:
+
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:90 at buffer index: 39 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:91 at buffer index: 40 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:92 at buffer index: 41 for PID:
@@ -147,20 +70,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:96 at buffer index: 45 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:97 at buffer index: 46 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:98 at buffer index: 47 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:99 at buffer index: 48 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:100 at buffer index: 49 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-51 on buffer index:0::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-52 on buffer index:1::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-53 on buffer index:2::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-54 on buffer index:3::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-55 on buffer index:4::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-56 on buffer index:5::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-57 on buffer index:6::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-58 on buffer index:7::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-59 on buffer index:8::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-60 on buffer index:9::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-61 on buffer index:10::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-62 on buffer index:11::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-63 on buffer index:12::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-64 on buffer index:13::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-65 on buffer index:14::PID:
@@ -170,12 +79,6 @@
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-69 on buffer index:18::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-70 on buffer index:19::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:101 at buffer index: 0 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-71 on buffer index:20::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:102 at buffer index: 1 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-72 on buffer index:21::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:103 at buffer index: 2 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-73 on buffer index:22::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:104 at buffer index: 3 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-74 on buffer index:23::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:105 at buffer index: 4 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-75 on buffer index:24::PID:
@@ -207,24 +110,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:119 at buffer index: 18 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:120 at buffer index: 19 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:121 at buffer index: 20 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:122 at buffer index: 21 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:123 at buffer index: 22 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-88 on buffer index:37::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:124 at buffer index: 23 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-89 on buffer index:38::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:125 at buffer index: 24 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-90 on buffer index:39::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:126 at buffer index: 25 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-91 on buffer index:40::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:127 at buffer index: 26 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-92 on buffer index:41::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:128 at buffer index: 27 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-93 on buffer index:42::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:129 at buffer index: 28 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-94 on buffer index:43::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:130 at buffer index: 29 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-95 on buffer index:44::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:131 at buffer index: 30 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-96 on buffer index:45::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:132 at buffer index: 31 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-97 on buffer index:46::PID:
@@ -256,27 +141,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:147 at buffer index: 46 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-109 on buffer index:8::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:148 at buffer index: 47 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-110 on buffer index:9::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:149 at buffer index: 48 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-111 on buffer index:10::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:150 at buffer index: 49 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-112 on buffer index:11::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:151 at buffer index: 0 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:152 at buffer index: 1 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-113 on buffer index:12::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:153 at buffer index: 2 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-114 on buffer index:13::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:154 at buffer index: 3 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-115 on buffer index:14::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:155 at buffer index: 4 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-116 on buffer index:15::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-117 on buffer index:16::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:156 at buffer index: 5 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:157 at buffer index: 6 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-118 on buffer index:17::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:158 at buffer index: 7 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-119 on buffer index:18::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:159 at buffer index: 8 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-120 on buffer index:19::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:160 at buffer index: 9 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-121 on buffer index:20::PID:
@@ -321,25 +185,6 @@
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-140 on buffer index:39::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:181 at buffer index: 30 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-141 on buffer index:40::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:182 at buffer index: 31 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-142 on buffer index:41::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:183 at buffer index: 32 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-143 on buffer index:42::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:184 at buffer index: 33 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-144 on buffer index:43::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:185 at buffer index: 34 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-145 on buffer index:44::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:186 at buffer index: 35 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-146 on buffer index:45::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:187 at buffer index: 36 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-147 on buffer index:46::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:188 at buffer index: 37 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-148 on buffer index:47::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:189 at buffer index: 38 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-149 on buffer index:48::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:190 at buffer index: 39 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-150 on buffer index:49::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:191 at buffer index: 40 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-151 on buffer index:0::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:192 at buffer index: 41 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-152 on buffer index:1::PID:
@@ -414,50 +259,6 @@
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-205 on buffer index:4::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-206 on buffer index:5::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-207 on buffer index:6::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-208 on buffer index:7::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:209 at buffer index: 8 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:210 at buffer index: 9 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:211 at buffer index: 10 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:212 at buffer index: 11 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:213 at buffer index: 12 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:214 at buffer index: 13 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:215 at buffer index: 14 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:216 at buffer index: 15 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:217 at buffer index: 16 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:218 at buffer index: 17 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:219 at buffer index: 18 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:220 at buffer index: 19 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:221 at buffer index: 20 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:222 at buffer index: 21 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:223 at buffer index: 22 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:224 at buffer index: 23 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:225 at buffer index: 24 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:226 at buffer index: 25 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:227 at buffer index: 26 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:228 at buffer index: 27 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:229 at buffer index: 28 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:230 at buffer index: 29 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:231 at buffer index: 30 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:232 at buffer index: 31 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:233 at buffer index: 32 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:234 at buffer index: 33 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:235 at buffer index: 34 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:236 at buffer index: 35 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:237 at buffer index: 36 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:238 at buffer index: 37 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:239 at buffer index: 38 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:240 at buffer index: 39 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:241 at buffer index: 40 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:242 at buffer index: 41 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:243 at buffer index: 42 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:244 at buffer index: 43 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:245 at buffer index: 44 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:246 at buffer index: 45 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:247 at buffer index: 46 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:248 at buffer index: 47 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:249 at buffer index: 48 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:250 at buffer index: 49 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:251 at buffer index: 0 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:252 at buffer index: 1 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:253 at buffer index: 2 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:254 at buffer index: 3 for PID:
@@ -555,19 +356,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:296 at buffer index: 45 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:297 at buffer index: 46 for PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:298 at buffer index: 47 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:299 at buffer index: 48 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:300 at buffer index: 49 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:301 at buffer index: 0 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:302 at buffer index: 1 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:303 at buffer index: 2 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:304 at buffer index: 3 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:305 at buffer index: 4 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:306 at buffer index: 5 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:307 at buffer index: 6 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:308 at buffer index: 7 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-259 on buffer index:8::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-260 on buffer index:9::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-261 on buffer index:10::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-262 on buffer index:11::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-263 on buffer index:12::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-264 on buffer index:13::PID:
@@ -700,20 +488,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:357 at buffer index: 6 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-343 on buffer index:42::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:358 at buffer index: 7 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-344 on buffer index:43::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:359 at buffer index: 8 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-345 on buffer index:44::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:360 at buffer index: 9 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-346 on buffer index:45::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:361 at buffer index: 10 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-347 on buffer index:46::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:362 at buffer index: 11 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-348 on buffer index:47::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:363 at buffer index: 12 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-349 on buffer index:48::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:364 at buffer index: 13 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-350 on buffer index:49::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:365 at buffer index: 14 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-351 on buffer index:0::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:366 at buffer index: 15 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-352 on buffer index:1::PID:
@@ -840,24 +614,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:427 at buffer index: 26 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-413 on buffer index:12::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:428 at buffer index: 27 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-414 on buffer index:13::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:429 at buffer index: 28 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-415 on buffer index:14::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:430 at buffer index: 29 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-416 on buffer index:15::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:431 at buffer index: 30 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-417 on buffer index:16::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:432 at buffer index: 31 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-418 on buffer index:17::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:433 at buffer index: 32 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-419 on buffer index:18::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:434 at buffer index: 33 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-420 on buffer index:19::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:435 at buffer index: 34 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-421 on buffer index:20::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:436 at buffer index: 35 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-422 on buffer index:21::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:437 at buffer index: 36 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-423 on buffer index:22::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:438 at buffer index: 37 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-424 on buffer index:23::PID:
@@ -867,31 +623,6 @@
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-426 on buffer index:25::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:441 at buffer index: 40 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-427 on buffer index:26::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:442 at buffer index: 41 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-428 on buffer index:27::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:443 at buffer index: 42 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-429 on buffer index:28::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:444 at buffer index: 43 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-430 on buffer index:29::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:445 at buffer index: 44 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-431 on buffer index:30::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:446 at buffer index: 45 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:447 at buffer index: 46 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:448 at buffer index: 47 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:449 at buffer index: 48 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:450 at buffer index: 49 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:451 at buffer index: 0 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:452 at buffer index: 1 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:453 at buffer index: 2 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:454 at buffer index: 3 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:455 at buffer index: 4 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:456 at buffer index: 5 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:457 at buffer index: 6 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:458 at buffer index: 7 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:459 at buffer index: 8 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:460 at buffer index: 9 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-432 on buffer index:31::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:461 at buffer index: 10 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-433 on buffer index:32::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:462 at buffer index: 11 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-434 on buffer index:33::PID:
@@ -900,99 +631,6 @@
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:464 at buffer index: 13 for PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-436 on buffer index:35::PID:
 ###[producer_thread_function]###[kProducer-1] Produce-Item#:465 at buffer index: 14 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-437 on buffer index:36::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-438 on buffer index:37::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:466 at buffer index: 15 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-439 on buffer index:38::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:467 at buffer index: 16 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-440 on buffer index:39::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-441 on buffer index:40::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:468 at buffer index: 17 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-442 on buffer index:41::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:469 at buffer index: 18 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-443 on buffer index:42::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-444 on buffer index:43::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:470 at buffer index: 19 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-445 on buffer index:44::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:471 at buffer index: 20 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-446 on buffer index:45::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:472 at buffer index: 21 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-447 on buffer index:46::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:473 at buffer index: 22 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-448 on buffer index:47::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:474 at buffer index: 23 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-449 on buffer index:48::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:475 at buffer index: 24 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-450 on buffer index:49::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:476 at buffer index: 25 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-451 on buffer index:0::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:477 at buffer index: 26 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-452 on buffer index:1::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:478 at buffer index: 27 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-453 on buffer index:2::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:479 at buffer index: 28 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-454 on buffer index:3::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:480 at buffer index: 29 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-455 on buffer index:4::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-456 on buffer index:5::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:481 at buffer index: 30 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-457 on buffer index:6::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:482 at buffer index: 31 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-458 on buffer index:7::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:483 at buffer index: 32 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-459 on buffer index:8::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-460 on buffer index:9::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:484 at buffer index: 33 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-461 on buffer index:10::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:485 at buffer index: 34 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-462 on buffer index:11::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:486 at buffer index: 35 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-463 on buffer index:12::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:487 at buffer index: 36 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-464 on buffer index:13::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:488 at buffer index: 37 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-465 on buffer index:14::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-466 on buffer index:15::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:489 at buffer index: 38 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-467 on buffer index:16::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:490 at buffer index: 39 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-468 on buffer index:17::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:491 at buffer index: 40 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-469 on buffer index:18::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-470 on buffer index:19::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:492 at buffer index: 41 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-471 on buffer index:20::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:493 at buffer index: 42 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-472 on buffer index:21::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-473 on buffer index:22::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:494 at buffer index: 43 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-474 on buffer index:23::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:495 at buffer index: 44 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-475 on buffer index:24::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:496 at buffer index: 45 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-476 on buffer index:25::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:497 at buffer index: 46 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-477 on buffer index:26::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:498 at buffer index: 47 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-478 on buffer index:27::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:499 at buffer index: 48 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-479 on buffer index:28::PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:500 at buffer index: 49 for PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-480 on buffer index:29::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-481 on buffer index:30::PID:
-###[producer_thread_function]###[kProducer-1] Producer Thread stopped.
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-482 on buffer index:31::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-483 on buffer index:32::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-484 on buffer index:33::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-485 on buffer index:34::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-486 on buffer index:35::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-487 on buffer index:36::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-488 on buffer index:37::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-489 on buffer index:38::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-490 on buffer index:39::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-491 on buffer index:40::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-492 on buffer index:41::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumed Item#-493 on buffer index:42::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-494 on buffer index:43::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-495 on buffer index:44::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-496 on buffer index:45::PID:
@@ -1000,8 +638,6 @@
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-498 on buffer index:47::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-499 on buffer index:48::PID:
 ###[consumer_thread_function]###[kConsumer-1] Consumed Item#-500 on buffer index:49::PID:
-###[consumer_thread_function]###[kConsumer-1] Consumer Thread stopped.
 ###[thread_exit_module]###Total number of items produced: 500
 ###[thread_exit_module]###Total number of items consumed: 500
-###[thread_exit_module]###CSE330 Project 2 Kernel Module Removed
 Time Check Passed
