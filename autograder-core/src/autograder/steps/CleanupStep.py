@@ -2,8 +2,8 @@ from autograder.engine.PipelineStep import PipelineStep
 from autograder.script_runner.CleanupRunner import CleanupRunner
 
 class CleanupStep(PipelineStep):
-    def __init__(self, phase: str):
-        self.phase = phase  # "after_test" | "after_submission"
+    def __init__(self):
+        pass
 
     def run(self, ctx, grader):
         cleanup_cfg = grader.config["testConfig"].get("cleanupConfig", {})
