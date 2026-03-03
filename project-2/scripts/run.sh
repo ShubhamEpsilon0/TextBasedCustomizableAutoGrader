@@ -79,6 +79,9 @@ fi
 # --- Save num to file ---
 name="test_cse330"
 home_dir="/home/$name"
+
+cleanup
+
 # --- Run process generator as the test user ---
 uid=$(id -u "$name")
 process_gen_path="$home_dir/process_generator"

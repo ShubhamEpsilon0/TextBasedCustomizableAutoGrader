@@ -1,2 +1,2 @@
-###[thread_exit_module]###Total number of items produced: 0
-###[thread_exit_module]###Total number of items consumed: 0
+Total number of items produced<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>0
+Total number of items consumed<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>0

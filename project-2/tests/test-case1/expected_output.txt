@@ -1,7 +1,7 @@
-###[producer_thread_function]###[kProducer-1] Produce-Item#:1 at buffer index: 0 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:2 at buffer index: 1 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:3 at buffer index: 2 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:4 at buffer index: 3 for PID:
-###[producer_thread_function]###[kProducer-1] Produce-Item#:5 at buffer index: 4 for PID:
-###[thread_exit_module]###Total number of items produced: 5
-###[thread_exit_module]###Total number of items consumed: 0
+Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>1 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>0 for PID
+Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>2 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>1 for PID
+Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>3 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>2 for PID
+Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>4 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>3 for PID
+Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>5 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>4 for PID
+Total number of items produced<ZERO_OR_MORE_SPACE>: 5
+Total number of items consumed<ZERO_OR_MORE_SPACE>: 0

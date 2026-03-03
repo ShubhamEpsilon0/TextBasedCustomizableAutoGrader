@@ -45,6 +45,8 @@ class RunTestsStep(PipelineStep):
                 ctx.result.FinalScore += tc["maxTestScore"]
             else:
                 grader.gradingSummary.TestCasesFailed += 1
+                if res["error"] == "Timeout: student code took too long":
+                    ctx.fatal_error = res["error"]
 
             # CleanupStep("after_test").run(ctx, grader)
 

@@ -5,7 +5,9 @@
     "Error: Clean up Failed",
     "codec can't decode byte"
   ],
-  "placeholderRegex": {},
+  "placeholderRegex": {
+    "ZERO_OR_MORE_SPACE": "\\s*"
+  },
   "folderStructure": [
     {
       "fileName": "kernel_module",
