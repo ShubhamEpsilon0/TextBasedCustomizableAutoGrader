@@ -3,5 +3,5 @@ Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>2 at buffer index<ZERO_OR_
 Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>3 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>2 for PID
 Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>4 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>3 for PID
 Produce-Item#<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>5 at buffer index<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>4 for PID
-Total number of items produced<ZERO_OR_MORE_SPACE>: 5
-Total number of items consumed<ZERO_OR_MORE_SPACE>: 0
+Total number of items produced<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>5
+Total number of items consumed<ZERO_OR_MORE_SPACE>:<ZERO_OR_MORE_SPACE>0
