@@ -84,7 +84,7 @@ uid=$(id -u "$name")
 process_gen_path="$home_dir/process_generator"
 
 #su "$name" -c "whoami && ls -l $process_gen_path"
-su "$name" -c "$process_gen_path $num" >/dev/null 2>&1 &
+sudo su "$name" -c "$process_gen_path $num" >/dev/null 2>&1 &
 
 #cmd="su \"$name\" -c \"$process_gen_path $num\""
 #echo "Executing: $cmd"
