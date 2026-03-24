@@ -72,7 +72,7 @@ class TestRunner(ABC):
             for out in outputs:
                 if out and fatal.lower() in out.lower():
                     raise SystemExit(
-                        f"Autograder terminated due to fatal error: {fatal}"
+                        f"Autograder terminated due to fatal error: {out}"
                     )
 
     def generateTestResults(

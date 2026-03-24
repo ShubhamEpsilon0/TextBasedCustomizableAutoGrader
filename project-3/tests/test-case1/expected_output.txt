@@ -1,0 +1,8 @@
+[log]: Starting 0 normal processes
+[log]: Starting 10 zombie processes ...
+[log]: ─ Kernel ModuleLoaded successfully
+[log]: ─ Found all expected threads
+[log]: All zombies were cleaned
+[log]: None of the regular processes were killed
+[log]: ─ Kernel module unloaded successfully
+[log]: ─ All threads have been stopped
