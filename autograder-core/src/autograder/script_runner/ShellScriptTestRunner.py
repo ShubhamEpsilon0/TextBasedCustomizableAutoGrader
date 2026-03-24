@@ -119,15 +119,14 @@ class ShellScriptTestRunner(TestRunner):
             self.logger.error(self._log_template({
                 "StudentSubmissionPath": studentSubmissionPath,
                 "RunScript": script,
-                "Error": "TimeoutExpired"
+                "Error": "TimeoutExpired",
+                "output": result.stdout.strip(),
+                "error": result.stderr.strip()
             }))
-            return {
-                "passed": False,
-                "output": "",
-                "expected": "",
-                "error": "Timeout: student code took too long",
-                "similarity_report": []
-            }
+
+            raise SystemExit(
+                f"Autograder terminated due to fatal error: Timeout: student code took too long"
+            )
         except Exception as e:
             # Fatal errors in exception
             # Fatal errors detection

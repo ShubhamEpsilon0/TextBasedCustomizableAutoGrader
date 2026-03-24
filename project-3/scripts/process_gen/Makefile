@@ -1,7 +1,7 @@
 CXX = gcc
 CXXFLAGS = -Wall -Wextra -g
-TARGET = procgen
-SRC = procgen.c
+TARGET = process_generator
+SRC = process_generator.c
 
 all: $(TARGET)
 

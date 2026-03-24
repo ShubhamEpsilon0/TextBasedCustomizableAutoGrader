@@ -1,5 +1,6 @@
 #!/bin/bash
-source ./utils.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/utils.sh"
 
 cleanup() {
     pkill -u "$USERNAME" -x process_generator >/dev/null 2>&1 || true
@@ -16,7 +17,6 @@ if [ $# -ne 6 ]; then
     exit 1
 fi
 
-path_to_build_script="$(cd "$(dirname "$0")" && pwd)"
 path_to_kernel_module=$1
 prod=$2
 cons=$3
