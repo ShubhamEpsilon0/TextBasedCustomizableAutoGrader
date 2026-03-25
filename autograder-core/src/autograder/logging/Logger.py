@@ -11,7 +11,7 @@ class Logger:
 
     def __init__(self, logFileName):
         self.logFileName = logFileName
-        self.logHandle = open(self.logFileName, "w+")
+        self.logHandle = open(self.logFileName, "a+")
         self.logLevel = LogLevel.ERROR
 
     def setLogLevel(self, level):

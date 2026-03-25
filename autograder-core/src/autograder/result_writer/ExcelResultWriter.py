@@ -36,20 +36,20 @@ class ExcelResultWriter(ResultWriter):
         passedSetDict = {}
         resultObject.TestResults = sorted(resultObject.TestResults, key=lambda result: result.TestName)
         for result in resultObject.TestResults:
-            passedSetDict[(result.TestName + "-Passed")] = result.Passed
-            passedSetDict[(result.TestName + "-Output")] = result.Output
-            passedSetDict[(result.TestName + "-Error")] = result.Error
-            passedSetDict[(result.TestName + "-Similarity Report")] = result.SimilarityReport
+            passedSetDict[(result.TestName + "-Passed",)] = result.Passed
+            passedSetDict[(result.TestName + "-Output",)] = result.Output
+            passedSetDict[(result.TestName + "-Error",)] = result.Error
+            # passedSetDict[(result.TestName + "-Similarity Report",)] = result.SimilarityReport
 
         res = {
-            ("Student Name") : resultObject.StudentName,
-            ("Asu Id"): resultObject.AsuId,
-            ("Fatal Errors"): resultObject.FatalErrors,
-            ("Build Passed"): resultObject.BuildPassed,
-            ("Build Errors"): resultObject.BuildError,
+            ("Student Name",) : resultObject.StudentName,
+            ("Asu Id",): resultObject.AsuId,
+            ("Fatal Errors",): resultObject.FatalErrors,
+            ("Build Passed",): resultObject.BuildPassed,
+            ("Build Errors",): resultObject.BuildError,
             #("Structure Errors", "", ""): json.dumps(resultObject.StructureErrors),
             #("Submission Error", "", ""): resultObject.SubmissionError,
-            ("Final Score"): resultObject.FinalScore,
+            ("Final Score",): resultObject.FinalScore,
         }
         res.update(passedSetDict)
         self.writeRow(res)

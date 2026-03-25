@@ -64,15 +64,14 @@ start_processes() {
 
     i=0
     while [ "$i" -lt "$regular" ]; do
-        sudo su -s /bin/bash "$USERNAME" -c "${HOME_DIR}/process_generator regular" &
+        sudo su -s /bin/bash "$USERNAME" -c "${HOME_DIR}/process_generator regular" > /dev/null 2>&1 &
         i=$((i + 1))
         sleep 0.02
     done
 
     i=0
     while [ "$i" -lt "$zombies" ]; do
-        sudo su -s /bin/bash "$USERNAME" -c "${HOME_DIR}/process_generator zombie" 2>&1 \
-            | tee -a "${HOME_DIR}/zombies.txt" >/dev/null &
+        sudo su -s /bin/bash "$USERNAME" -c "${HOME_DIR}/process_generator zombie" > /dev/null 2>&1 &
         i=$((i + 1))
         sleep 0.02
     done

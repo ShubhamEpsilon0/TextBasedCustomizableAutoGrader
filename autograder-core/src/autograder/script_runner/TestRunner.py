@@ -84,6 +84,8 @@ class TestRunner(ABC):
         """
         Compare output with expected output (if provided).
         """
+
+        print("Yup in here.....")
         expected = ""
         passed = False
         similarity_report = []
@@ -110,6 +112,7 @@ class TestRunner(ABC):
         #    similarity_report = self.computeSimilarityReport(
         #        expectedLines, actualLines
         #    )
+        print("out of here.....")
         return {
             "passed": passed,
             "output": actualOutput,
@@ -118,9 +121,6 @@ class TestRunner(ABC):
             "similarity_report": similarity_report
         }
 
-    # -----------------------------------------------------------
-    # Helper methods (optional but recommended)
-    # -----------------------------------------------------------
     def normalizeInput(self, inputData: Optional[Union[str, List[str]]]) -> List[str]:
         if inputData is None:
             return []
@@ -143,3 +143,10 @@ class TestRunner(ABC):
                 "closest_line": best_match
             })
         return tuple(similarity_report)
+
+    def _to_text(self,value):
+        if value is None:
+            return ""
+        if isinstance(value, bytes):
+            return value.decode("utf-8", errors="replace")
+        return str(value)
