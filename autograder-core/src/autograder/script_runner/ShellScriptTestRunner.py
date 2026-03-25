@@ -61,6 +61,7 @@ class ShellScriptTestRunner(TestRunner):
             }))
             return False, None, str(e)
 
+
     # ------------------------------------------------------------------
     # Run
     # ------------------------------------------------------------------
@@ -81,6 +82,8 @@ class ShellScriptTestRunner(TestRunner):
         - None (no input arguments)
         """
         script = runScript
+        output = None
+        error = None
         if not script:
             self.logger.error(self._log_template({
                 "StudentSubmissionPath": studentSubmissionPath,
@@ -98,6 +101,7 @@ class ShellScriptTestRunner(TestRunner):
             args = inputData
 
         try:
+            print(f"Executing run script: {script} with args: {args}")
             result = subprocess.run(
                 [script, studentSubmissionPath, *args],
                 stdout=subprocess.PIPE,
@@ -105,23 +109,28 @@ class ShellScriptTestRunner(TestRunner):
                 timeout=timeout,
                 text=True
             )
+            print(f"Run script executed. Return code: {result.returncode}")
 
-            output = result.stdout.strip()
-            error = result.stderr.strip()
 
+            output = self._to_text(result.stdout).strip()
+            error = self._to_text(result.stderr).strip()
+
+            print(f"Run script executed. Output: {output}, Error: {error}")
             # Fatal errors detection
             self.detectFatalErrors([output, error])
 
             # Generate test report
             return self.generateTestResults(output, error, expectedOutputFile)
 
-        except subprocess.TimeoutExpired:
+        except subprocess.TimeoutExpired as e:
+            output = self._to_text(e.stdout).strip()
+            error = self._to_text(e.stderr).strip()
             self.logger.error(self._log_template({
                 "StudentSubmissionPath": studentSubmissionPath,
                 "RunScript": script,
                 "Error": "TimeoutExpired",
-                "output": result.stdout.strip(),
-                "error": result.stderr.strip()
+                "output": output,
+                "error": error
             }))
 
             raise SystemExit(
@@ -143,3 +152,8 @@ class ShellScriptTestRunner(TestRunner):
                 "error": f"Unexpected error: {str(e)}",
                 "similarity_report": []
             }
+        finally:
+            print("Test execution completed.")
+            print(f"Output: {output}")
+            print(f"Error: {error}")
+        
