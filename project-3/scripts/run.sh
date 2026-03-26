@@ -3,7 +3,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/utils.sh"
 
 cleanup() {
-    sudo pkill -u "$USERNAME" -f process_generator >/dev/null 2>&1 || true
+    sudo pkill -u "$USERNAME" -x "/home/TestP3/process_generator" >/dev/null 2>&1 || true
+    # sleep 3
     
     if [ -n "$KERNEL_MODULE_ERR" ]; then
         echo -e "[log]: ─ Errors: ${KERNEL_MODULE_ERR}" >&2
@@ -14,7 +15,6 @@ cleanup() {
 
     if [ "$cur_regular_count" -ne 0 ]; then
         echo "[log]: Found ${cur_regular_count} regular processes running before starting the test."
-        exit 1
     fi
 }
 
@@ -34,7 +34,7 @@ zombies=$6
 
 zombies_pids=""
 
-cleanup
+# cleanup
 
 echo "[log]: Starting ${regular} normal processes"
 start_processes "$regular" 0 &
@@ -44,7 +44,6 @@ while [ "$cur_regular_count" -ne "$regular" ]; do
     sleep 0.5
     base_regular=$(ps -u "$USERNAME" -o pid=,args= | awk '/process_generator regular/ {print $1}' | sort)
     cur_regular_count=$(echo "$base_regular" | wc -w)
-    echo "[log]: ─ Found ${cur_regular_count}/${regular} regular processes so far"
 done
 
 if [ "$zombies" -ne 0 ]; then
@@ -54,7 +53,7 @@ if [ "$zombies" -ne 0 ]; then
     if [ "$total_zombies" -le 100 ]; then
         batch_size=10
     else
-        batch_size=200
+        batch_size=100
     fi
 
     echo "[log]: Starting ${total_zombies} zombie processes ..."
@@ -70,15 +69,14 @@ if [ "$zombies" -ne 0 ]; then
         start_processes 0 "$current_batch_size"
         zombie_count=$((zombie_count + current_batch_size))
 
-        echo "[log]: ─ Total zombies spawned so far: $zombie_count/$total_zombies"
-        sleep 1
+        # echo "[log]: ─ Total zombies spawned so far: $zombie_count/$total_zombies"
     done
 fi
 
 pushd "$path_to_kernel_module/source_code" >/dev/null || exit 1
 
     uid=$(id -u "$USERNAME")
-    echo "[log]: Load the kernel module"
+    # echo "[log]: Load the kernel module"
     if ! load_module_with_params "$prod" "$cons" "$buffSize" "$uid"; then
         echo "[log]: ─ Failed to insert kernel module." >&2
         exit 1
@@ -86,10 +84,10 @@ pushd "$path_to_kernel_module/source_code" >/dev/null || exit 1
         echo "[log]: ─ Kernel ModuleLoaded successfully"
     fi
 
-    echo "[log]: ┬ We will wait 10 seconds"
-    sleep 10
+    # echo "[log]: ┬ We will wait 10 seconds"
+    sleep 2
 
-    echo "[log]: Checking the counts of the running kernel threads"
+    # echo "[log]: Checking the counts of the running kernel threads"
     if ! check_threads "$prod" "$cons" 2; then
         echo "[log]: ─ Thread count check failed." >&2
     else
@@ -98,7 +96,7 @@ pushd "$path_to_kernel_module/source_code" >/dev/null || exit 1
 
     sleep 10
 
-    echo "[log]: Checking the pids of all remaining processes against your output"
+    # echo "[log]: Checking the pids of all remaining processes against your output"
 
     if [ "$zombies" -ne 0 ] && [ -f "/home/$USERNAME/zombies.txt" ]; then
         zombies_pids=$(grep -Eo '[0-9]+' "/home/$USERNAME/zombies.txt" | sort -u)
@@ -111,14 +109,16 @@ pushd "$path_to_kernel_module/source_code" >/dev/null || exit 1
         echo "[log]: None of the regular processes were killed"
     fi
 
-    echo "[log]: Unload the kernel module"
+    cleanup
+
+    # echo "[log]: Unload the kernel module"
     if ! unload_module; then
         echo "[log]: ─ Error: Failed to remove kernel module." >&2
     else
         echo "[log]: ─ Kernel module unloaded successfully"
     fi
 
-    echo "[log]: Checking to make sure kthreads are terminated"
+    # echo "[log]: Checking to make sure kthreads are terminated"
     if ! check_threads 0 0 3; then
         echo "[log]: ─ Failed to terminate all threads." >&2
     else

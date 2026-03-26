@@ -85,7 +85,6 @@ class TestRunner(ABC):
         Compare output with expected output (if provided).
         """
 
-        print("Yup in here.....")
         expected = ""
         passed = False
         similarity_report = []
@@ -112,7 +111,6 @@ class TestRunner(ABC):
         #    similarity_report = self.computeSimilarityReport(
         #        expectedLines, actualLines
         #    )
-        print("out of here.....")
         return {
             "passed": passed,
             "output": actualOutput,

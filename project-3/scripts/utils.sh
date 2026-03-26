@@ -42,13 +42,13 @@ check_threads() {
     local points=$3
     local count
 
-    count=$(ps -e -o comm= | grep -c '^Producer-')
+    count=$(ps -e -o comm= | grep -Eci '^k?Producer-')
     if [ "$count" -ne "$prod" ]; then
         KERNEL_MODULE_ERR="${KERNEL_MODULE_ERR}\n - Found ${count} producer threads, expected ${prod} (-${points} points)"
         return 1
     fi
 
-    count=$(ps -e -o comm= | grep -c '^Consumer-')
+    count=$(ps -e -o comm= | grep -Eci '^k?Consumer-')
     if [ "$count" -ne "$cons" ]; then
         KERNEL_MODULE_ERR="${KERNEL_MODULE_ERR}\n - Found ${count} consumer threads, expected ${cons} (-${points} points)"
         return 1
@@ -110,7 +110,7 @@ unload_module() {
     sudo dmesg -c >/dev/null 2>/dev/null
 
     local rmmod_out
-    rmmod_out=$(sudo rmmod "${KERNEL_MODULE_NAME}" 2>&1)
+    rmmod_out=$(timeout 15s sudo rmmod "${KERNEL_MODULE_NAME}" 2>&1)
 
     if sudo lsmod | grep -q "^${KERNEL_MODULE_NAME}\b"; then
         KERNEL_MODULE_ERR="${KERNEL_MODULE_ERR}\n - Failed to unload kernel module. Error: ${rmmod_out}"
