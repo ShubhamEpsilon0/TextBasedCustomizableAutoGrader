@@ -45,6 +45,9 @@ class SubmissionStructureFixer:
     def copy_default_files(self, submission_path: str):
         for fileMetaData in self.defaultFilesToCopy:
             new_path = os.path.join(submission_path, fileMetaData["destinationPath"])
+
+            os.makedirs(os.path.dirname(new_path), exist_ok=True)
+
             shutil.copy2(fileMetaData["sourcePath"], new_path)
 
 

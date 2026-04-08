@@ -23,42 +23,47 @@ if [ ! -d "$SOURCE_CODE_PATH" ]; then
 fi
 
 # Use pushd to change to the source_code directory, suppress output
-pushd "$SOURCE_CODE_PATH" > /dev/null || exit
+pushd "$SUBMISSION_PATH" > /dev/null || exit
 
-# Check if Makefile exists in the source_code directory
-if [ ! -f "Makefile" ]; then
-    echo "Error: Makefile not found in the source_code directory." >&2
-    # Return to the previous directory using popd, suppress output
-    popd > /dev/null
-    exit 1
-fi
+    pushd "memalloc" > /dev/null || exit
 
-# Compile the kernel module using the Makefile, suppress all output
-#make > /dev/null 2>&1
-make clean > /dev/null 2>&1
-out=$(make)
-
-# Check if the compilation was successful
-if [ $? -ne 0 ]; then
-    echo "Error: Kernel module compilation failed. Error => $out" >&2
-    popd > /dev/null
-    exit 1
-fi
-
-# Return to the previous directory using popd, suppress output
-popd > /dev/null
-
-# Compile Test Cases
-pushd testcases
-    for src in ./*.c; do
-        [ -e "$src" ] || continue
-        exe="${src%.c}"
-        if ! gcc "$src" -o "$exe"; then
-            echo "Error: Test Case compilation failed for $src" >&2
+        # Check if Makefile exists in the source_code directory
+        if [ ! -f "Makefile" ]; then
+            echo "Error: Makefile not found in the source_code directory." >&2
+            # Return to the previous directory using popd, suppress output
+            popd > /dev/null
             exit 1
         fi
-    done
-popd
+
+        # Compile the kernel module using the Makefile, suppress all output
+        #make > /dev/null 2>&1
+        make clean > /dev/null 2>&1
+        out=$(make)
+
+        # Check if the compilation was successful
+        if [ $? -ne 0 ]; then
+            echo "Error: Kernel module compilation failed. Error => $out" >&2
+            popd > /dev/null
+            exit 1
+        fi
+
+    # Return to the previous directory using popd, suppress output
+    popd > /dev/null
+
+    ls -l >&2
+    # Compile Test Cases
+    pushd "testcases" > /dev/null || exit
+        for src in ./*.c; do
+            [ -e "$src" ] || continue
+            exe="${src%.c}"
+            if ! gcc "$src" -o "$exe"; then
+                echo "Error: Test Case compilation failed for $src" >&2
+                exit 1
+            fi
+        done
+    popd > /dev/null
+
+popd > /dev/null
 
 exit 0
 
