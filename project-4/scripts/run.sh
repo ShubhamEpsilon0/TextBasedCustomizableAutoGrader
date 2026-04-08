@@ -36,19 +36,23 @@ if [ ! -f "$testcase_name" ]; then
 fi
 
 ./"$testcase_name"
-
-sudo dmesg | tail -n 10
-
+if [ $? -ne 0 ]; then
+    echo "Error: Test case '$testcase_name' execution failed." >&2
+    popd > /dev/null
+    exit 1
+fi
 popd > /dev/null
 
-
 #remove kernel module
-
 out=$(sudo rmmod memalloc 2>&1) || KERNEL_MODULE_ERR="$out"
 
 if [ -n "$KERNEL_MODULE_ERR" ]; then
     echo -e "[log]: ─ Failed to remove kernel module: ${KERNEL_MODULE_ERR}" >&2
     exit 1
+fi
+
+if [ "$testcase_name" = "test0" ]; then
+    sudo dmesg | tail -n 20
 fi
 
 exit 0

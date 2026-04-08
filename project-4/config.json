@@ -4,15 +4,23 @@
     "Failed to remove kernel module",
     "codec can't decode byte"
   ],
-  "placeholderRegex": {},
+  "placeholderRegex": {
+    "MEM_ADDR": "0x[0-9a-fA-F]+",
+    "STRIPPED_MEM_ADDR": "[0-9a-fA-F]+"
+  },
   "folderStructure": [
     {
-      "fileName": "source_code",
+      "fileName": "memalloc",
       "fileType": 0,
       "content": [
         {
-          "fileName": "producer_consumer.c",
-          "misnomers": [".*\\.c"],
+          "fileName": "memalloc-main.c",
+          "misnomers": [".*\\-main.c"],
+          "fileType": 1
+        },
+        {
+          "fileName": "memalloc-helper.c",
+          "misnomers": [".*\\-helper.c"],
           "fileType": 1
         }
       ]
@@ -20,58 +28,136 @@
   ],
   "defaultFilesToCopy": [
     {
-      "sourcePath": "../project-3/defaultFiles/Makefile",
-      "destinationPath": "source_code/Makefile"
-    }
+      "sourcePath": "../project-4/defaultFiles/memalloc/Makefile",
+      "destinationPath": "memalloc/Makefile"
+    },
+    {
+      "sourcePath": "../project-4/defaultFiles/memalloc/memalloc-common.h",
+      "destinationPath": "memalloc/memalloc-common.h"
+    },
+    {
+      "sourcePath": "../project-4/defaultFiles/common.h",
+      "destinationPath": "common.h"
+    },{
+      "sourcePath": "../project-4/defaultFiles/testcases/helper.h",
+      "destinationPath": "testcases/helper.h"
+    }, {
+      "sourcePath": "../project-4/defaultFiles/testcases/test0.c",
+      "destinationPath": "testcases/test0.c"
+    },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test1.c",
+        "destinationPath": "testcases/test1.c"
+      },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test2.c",
+        "destinationPath": "testcases/test2.c"
+      },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test3.c",
+        "destinationPath": "testcases/test3.c"
+      },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test4.c",
+        "destinationPath": "testcases/test4.c"
+      },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test5.c",
+        "destinationPath": "testcases/test5.c"
+      },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test6.c",
+        "destinationPath": "testcases/test6.c"
+      },
+      {
+        "sourcePath": "../project-4/defaultFiles/testcases/test7.c",
+        "destinationPath": "testcases/test7.c"
+      }
   ],
   "roosterPath": "../studentNames.txt",
-  "submissionsPath": "../project-3/submissions/",
-  "testFolderPath": "../project-3/tests/",
+  "submissionsPath": "../project-4/submissions/",
+  "testFolderPath": "../project-4/tests/",
   "testConfig": {
-    "buildScriptPath": "../project-3/scripts/build.sh",
+    "buildScriptPath": "../project-4/scripts/build.sh",
     "buildTestRunnerType": "ShellScript",
     "testCases": [
+      {
+        "testName": "test-case0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "test0",
+        "timeout": 45,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 10
+      },
       {
         "testName": "test-case1",
         "buildRequired": true,
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
-        "inputLine": "1 10 5 0 10",
+        "inputLine": "test1",
         "timeout": 45,
         "expectedOutputFilePath": "expected_output.txt",
-        "maxTestScore": 25
+        "maxTestScore": 15
       },
       {
         "testName": "test-case2",
         "buildRequired": true,
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
-        "inputLine": "1 10 5 10 10",
+        "inputLine": "test2",
         "timeout": 45,
         "expectedOutputFilePath": "expected_output.txt",
-        "maxTestScore": 25
+        "maxTestScore": 15
       },
       {
         "testName": "test-case3",
         "buildRequired": true,
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
-        "inputLine": "1 20 10 100 100",
-        "timeout": 90,
+        "inputLine": "test3",
+        "timeout": 45,
         "expectedOutputFilePath": "expected_output.txt",
-        "maxTestScore": 25
-      },
-      {
+        "maxTestScore": 15
+      }, {
         "testName": "test-case4",
         "buildRequired": true,
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
-        "inputLine": "1 50 100 1000 1000",
-        "timeout": 90,
+        "inputLine": "test4",
+        "timeout": 45,
         "expectedOutputFilePath": "expected_output.txt",
-        "maxTestScore": 25
+        "maxTestScore": 15
+      }, {
+        "testName": "test-case5",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "test5",
+        "timeout": 45,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 15
+      }, {
+        "testName": "test-case6",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "test6",
+        "timeout": 45,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 7.5
+      }, {
+        "testName": "test-case7",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "test7",
+        "timeout": 45,
+        "expectedOutputFilePath": "expected_output.txt",
+        "maxTestScore": 7.5
       }
     ]
   },
-  "resultsFilePath": "../project-3/results.xlsx"
+  "resultsFilePath": "../project-4/results.xlsx"
 }
