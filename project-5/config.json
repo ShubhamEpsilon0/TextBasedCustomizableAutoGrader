@@ -1,0 +1,238 @@
+{
+  "fatalErrors": [
+    "Failed to insert kernel module",
+    "Failed to remove kernel module",
+    "codec can't decode byte"
+  ],
+  "placeholderRegex": {},
+  "folderStructure": [
+    {
+      "fileName": "kmodule",
+      "fileType": 0,
+      "content": [
+        {
+          "fileName": "kmod-main.c",
+          "misnomers": [".*\\-main.c"],
+          "fileType": 1
+        },
+        {
+          "fileName": "kmod-ioctl.c",
+          "misnomers": [".*\\-ioctl.c"],
+          "fileType": 1
+        }
+      ]
+    }
+  ],
+  "defaultFilesToCopy": [
+    {
+      "sourcePath": "../project-5/defaultFiles/kmodule/Makefile",
+      "destinationPath": "kmodule/Makefile"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/ioctl-defines.h",
+      "destinationPath": "ioctl-defines.h"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/common.h",
+      "destinationPath": "testcases/common.h"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/dd_primitives.c",
+      "destinationPath": "testcases/dd_primitives.c"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/kmod-primitives.c",
+      "destinationPath": "testcases/kmod-primitives.c"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/test-read-variable.c",
+      "destinationPath": "testcases/test-read-variable.c"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/test-read.c",
+      "destinationPath": "testcases/test-read.c"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/test-write.c",
+      "destinationPath": "testcases/test-write.c"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/test-write-variable.c",
+      "destinationPath": "testcases/test-write-variable.c"
+    },
+    {
+      "sourcePath": "../project-5/defaultFiles/testcases/Makefile",
+      "destinationPath": "testcases/Makefile"
+    }
+  ],
+  "roosterPath": "../studentNames.txt",
+  "submissionsPath": "../project-5/submissions/",
+  "testFolderPath": "../project-5/tests/",
+  "testConfig": {
+    "buildScriptPath": "../project-5/scripts/build.sh",
+    "buildTestRunnerType": "ShellScript",
+    "testCases": [
+      {
+        "testName": "test0-read",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read",
+        "timeout": 45,
+        "expectedOutputFilePath": "read",
+        "maxTestScore": 15
+      },
+      {
+        "testName": "test1-read-variable-512-1-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 512 1 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-512-1-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test2-read-variable-512-1024-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 512 1024 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-512-1024-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test3-read-variable-512-100000-131072",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 512 100000 131072",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-512-100000-131072",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test4-read-variable-2048-100000-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 2048 100000 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-2048-100000-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test5-read-variable-8192-100-134217728",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 8192 100 134217728",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-8192-100-134217728",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test6-read-variable-16384-10000-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 16384 10000 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-16384-10000-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test7-read-variable-16384-10000-1048576",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "read-variable 16384 10000 1048576",
+        "timeout": 45,
+        "expectedOutputFilePath": "read-variable-16384-10000-1048576",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test8-write",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write",
+        "timeout": 45,
+        "expectedOutputFilePath": "write",
+        "maxTestScore": 15
+      },
+      {
+        "testName": "test9-write-variable-512-1-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 512 1 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-512-1-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test10-write-variable-512-100000-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 512 100000 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-512-100000-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test11-write-variable-2048-10000-16384",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 2048 10000 16384",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-2048-10000-16384",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test12-write-variable-8192-512-402653184",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 8192 512 402653184",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-8192-512-402653184",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test13-write-variable-8192-10000-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 8192 10000 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-8192-10000-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test14-write-variable-131072-768-0",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 131072 768 0",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-131072-768-0",
+        "maxTestScore": 5
+      },
+      {
+        "testName": "test15-write-variable-393216-1024-402653184",
+        "buildRequired": true,
+        "runScriptPath": "../../scripts/run.sh",
+        "testRunnerType": "ShellScript",
+        "inputLine": "write-variable 393216 1024 402653184",
+        "timeout": 45,
+        "expectedOutputFilePath": "write-variable-393216-1024-402653184",
+        "maxTestScore": 5
+      }
+    ]
+  },
+  "resultsFilePath": "../project-5/results.xlsx"
+}
