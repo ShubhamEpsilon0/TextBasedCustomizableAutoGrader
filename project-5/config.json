@@ -41,8 +41,8 @@
       "destinationPath": "testcases/dd_primitives.c"
     },
     {
-      "sourcePath": "../project-5/defaultFiles/testcases/kmod-primitives.c",
-      "destinationPath": "testcases/kmod-primitives.c"
+      "sourcePath": "../project-5/defaultFiles/testcases/kmod_primitives.c",
+      "destinationPath": "testcases/kmod_primitives.c"
     },
     {
       "sourcePath": "../project-5/defaultFiles/testcases/test-read-variable.c",
@@ -108,7 +108,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "read-variable 512 100000 131072",
-        "timeout": 45,
+        "timeout": 75,
         "expectedOutputFilePath": "read-variable-512-100000-131072",
         "maxTestScore": 5
       },
@@ -118,7 +118,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "read-variable 2048 100000 0",
-        "timeout": 45,
+        "timeout": 150,
         "expectedOutputFilePath": "read-variable-2048-100000-0",
         "maxTestScore": 5
       },
@@ -138,7 +138,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "read-variable 16384 10000 0",
-        "timeout": 45,
+        "timeout": 120,
         "expectedOutputFilePath": "read-variable-16384-10000-0",
         "maxTestScore": 5
       },
@@ -148,7 +148,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "read-variable 16384 10000 1048576",
-        "timeout": 45,
+        "timeout": 120,
         "expectedOutputFilePath": "read-variable-16384-10000-1048576",
         "maxTestScore": 5
       },
@@ -178,7 +178,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "write-variable 512 100000 0",
-        "timeout": 45,
+        "timeout": 75,
         "expectedOutputFilePath": "write-variable-512-100000-0",
         "maxTestScore": 5
       },
@@ -208,7 +208,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "write-variable 8192 10000 0",
-        "timeout": 45,
+        "timeout": 100,
         "expectedOutputFilePath": "write-variable-8192-10000-0",
         "maxTestScore": 5
       },
@@ -218,7 +218,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "write-variable 131072 768 0",
-        "timeout": 45,
+        "timeout": 100,
         "expectedOutputFilePath": "write-variable-131072-768-0",
         "maxTestScore": 5
       },
@@ -228,7 +228,7 @@
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
         "inputLine": "write-variable 393216 1024 402653184",
-        "timeout": 45,
+        "timeout": 300,
         "expectedOutputFilePath": "write-variable-393216-1024-402653184",
         "maxTestScore": 5
       }

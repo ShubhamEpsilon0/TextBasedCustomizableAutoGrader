@@ -27,6 +27,17 @@ pushd "$SUBMISSION_PATH" > /dev/null || exit
 
     pushd "kmodule" > /dev/null || exit
 
+        
+        dname=$(lsblk -ndo NAME,SIZE,TYPE | awk '$2=="1G" && $3=="disk" {print $1; exit}')
+        [ -n "$dname" ] || { echo "No matching 1G disk found"; exit 1; }
+
+        dpath="/dev/$dname"
+        [ -b "$dpath" ] || { echo "Not a block device: $dpath"; exit 1; }
+
+        escaped_dpath=$(printf '%s\n' "$dpath" | sed 's/[\/&]/\\&/g')
+
+        sed -i "0,/char[[:space:]]*\*[[:space:]]*device[[:space:]]*=.*;/s//char* device = \"$escaped_dpath\";/" kmod-main.c
+
         # Check if Makefile exists in the source_code directory
         if [ ! -f "Makefile" ]; then
             echo "Error: Makefile not found in the source_code directory." >&2

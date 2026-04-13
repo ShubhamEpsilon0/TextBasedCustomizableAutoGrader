@@ -271,8 +271,8 @@ class ShellScriptTestRunner(TestRunner):
                     "StudentSubmissionPath": studentSubmissionPath,
                     "RunScript": script,
                     "Error": "TimeoutExpired",
-                    "output": output,
-                    "error": error,
+                    "output": output[:500],  # Log only the first 500 chars to avoid flooding logs
+                    "error": error[:500],
                     "SystemdUnit": unit_name
                 }))
 
