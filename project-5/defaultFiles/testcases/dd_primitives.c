@@ -33,7 +33,7 @@ bool bwrite_using_dd(char* device, char* message, unsigned long size) {
     char* command = (char*) malloc(512);
     if (!command) {printf("Error: could not allocate command buffer\n"); return false;}
     sprintf(command, 
-           "dd if=dd.txt count=1 bs=%ld of=%s oflag=seek_bytes seek=%ld > /dev/null 2>&1", 
+           "sudo dd if=dd.txt count=1 bs=%ld of=%s oflag=seek_bytes seek=%ld > /dev/null 2>&1", 
            size, device, dd_current_offset);
     system(command);
     system("sync");
@@ -50,7 +50,7 @@ bool bread_using_dd(char* device, char* buffer, unsigned long size) {
     char* command = (char*) malloc(512);
     if (!command) {printf("Error: could not allocate command buffer\n"); return false;}
     sprintf(command, 
-            "dd if=%s iflag=skip_bytes count=1 bs=%ld skip=%ld of=dd.txt > /dev/null 2>&1", 
+            "sudo dd if=%s iflag=skip_bytes count=1 bs=%ld skip=%ld of=dd.txt > /dev/null 2>&1", 
             device, size, dd_current_offset);
     system("sync");
     system(command);
@@ -89,7 +89,7 @@ void bread_file_range_using_dd(char* device, unsigned long start, unsigned long 
     char* command = (char*) malloc(512);
     if (!command) {printf("Error: could not allocate command buffer\n"); return;}
     sprintf(command, 
-            "dd if=%s count=1 bs=%ld iflag=skip_bytes skip=%ld of=dd.txt > /dev/null 2>&1", 
+            "sudo dd if=%s count=1 bs=%ld iflag=skip_bytes skip=%ld of=dd.txt > /dev/null 2>&1", 
             device, (end-start), start);
     system(command);
     system("sync");
@@ -101,7 +101,7 @@ void bwrite_file_range_using_dd(char* device, unsigned long start, unsigned long
     char* command = (char*) malloc(512);
     if (!command) {printf("Error: could not allocate command buffer\n"); return;}
     sprintf(command, 
-           "dd if=dd.txt count=1 bs=%ld of=%s oflag=seek_bytes seek=%ld > /dev/null 2>&1", 
+           "sudo dd if=dd.txt count=1 bs=%ld of=%s oflag=seek_bytes seek=%ld > /dev/null 2>&1", 
            (end-start), device, start);
     system(command);
     system("sync");
