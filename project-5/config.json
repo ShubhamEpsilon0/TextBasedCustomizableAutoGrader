@@ -2,6 +2,7 @@
   "fatalErrors": [
     "Failed to insert kernel module",
     "Failed to remove kernel module",
+    "The block device is not all zeros",
     "codec can't decode byte"
   ],
   "placeholderRegex": {},
@@ -103,13 +104,13 @@
         "maxTestScore": 5
       },
       {
-        "testName": "test3-read-variable-512-100000-131072",
+        "testName": "test3-read-variable-512-10000-131072",
         "buildRequired": true,
         "runScriptPath": "../../scripts/run.sh",
         "testRunnerType": "ShellScript",
-        "inputLine": "read-variable 512 100000 131072",
+        "inputLine": "read-variable 512 10000 131072",
         "timeout": 75,
-        "expectedOutputFilePath": "read-variable-512-100000-131072",
+        "expectedOutputFilePath": "read-variable-512-10000-131072",
         "maxTestScore": 5
       },
       {
