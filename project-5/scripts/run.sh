@@ -11,22 +11,19 @@ cleanup() {
     dpath="/dev/$dname"
     [ -b "$dpath" ] || { echo "Not a block device: $dpath"; exit 1; }
 
-    local start length
+    echo "$dname" "$dpath"
+    # local size
+    set -o pipefail
+    
+    # dd if=/dev/zero of="$dpath" bs=16M status=none conv=fsync
+    # sync
+    # blockdev --flushbufs "$dpath"
 
-    if [ -n "$blocksize" ] && [ -n "$iterations" ] && [ -n "$offset" ]; then
-        start=$offset
-        length=$((blocksize * iterations))
-    else
-        start=0
-        length=512
+    size=$(blockdev --getsize64 "$dpath")
+    if ! dd if=/dev/zero of="$dpath" bs=1M count=$(( size / 1024 / 1024 )) status=none; then
+        echo "dd failed (real error)" >&2
+        exit 1
     fi
-
-    [ "$length" -gt 0 ] || length=512
-
-    # sudo dd if=/dev/zero of="$dpath" \
-    #     bs=1 seek="$start" count="$length" conv=notrunc status=none || exit 1
-
-    # sudo blkdiscard "$dpath" || sudo dd if=/dev/zero of="$dpath" bs=16M oflag=direct status=none
 
     sudo rmmod kmod 2>/dev/null || true
 }
@@ -57,7 +54,12 @@ if [[ $2 == *"-variable" ]]; then
     offset=$5
 fi
 
-# cleanup
+
+
+if [ $testcase_name == "write" ] || [ $testcase_name == "write-variable" ]; then
+    cleanup
+    sleep 3
+fi
 
 dname=$(lsblk -ndo NAME,SIZE,TYPE | awk '$2=="1G" && $3=="disk" {print $1; exit}')
 [ -n "$dname" ] || { echo "No matching 1G disk found"; exit 1; }
@@ -90,10 +92,7 @@ pushd "$path_to_submission_folder/testcases" > /dev/null || exit
 
     rm -rf *.txt
 
-    start=$(date +%s)
     ./"test-$testcase_name" $dpath $blocksize $iterations $offset
-    end=$(date +%s)
-    echo "Test case '$testcase_name' executed in $((end - start)) seconds."
 
     if [ $? -ne 0 ]; then
         echo "Error: Test case '$testcase_name' execution failed." >&2
