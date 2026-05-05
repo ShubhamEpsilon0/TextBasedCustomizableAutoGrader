@@ -70,7 +70,7 @@ dpath="/dev/$dname"
 # Install Kernel Module
 pushd "$path_to_submission_folder/kmodule" > /dev/null || exit
 
-out=$(sudo insmod kmod.ko 2>&1) || KERNEL_MODULE_ERR="$out"
+out=$(sudo insmod kmod.ko device=$dpath 2>&1) || KERNEL_MODULE_ERR="$out"
 
 if [ -n "$KERNEL_MODULE_ERR" ]; then
     echo -e "[log]: ─ Failed to insert kernel module: ${KERNEL_MODULE_ERR}" >&2
